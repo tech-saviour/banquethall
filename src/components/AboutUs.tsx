@@ -5,12 +5,17 @@ export default function AboutUs() {
         <section className="bg-[#FFFFF0] text-gray-800 px-6 py-16 md:px-16">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl sm:text-5xl font-serif text-center mb-6">About Us</h2>
-                <div className="flex justify-center mb-12">
-                    <div className="w-60 border-t border-gray-500 relative">
-                        <div className="absolute -top-2 left-0">❧</div>
-                        <div className="absolute -top-2 right-0">❧</div>
-                    </div>
-                </div>
+                 <div className="flex justify-center mb-12">
+                                <div className="-mt-4">
+                                    <Image
+                                        src="/vector.png"
+                                        alt="Decoration"
+                                        width={400}
+                                        height={40}
+                                        className="w-62 h-auto"
+                                    />
+                                </div>
+                            </div>
 
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left - Image collage */}

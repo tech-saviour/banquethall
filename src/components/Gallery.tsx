@@ -5,11 +5,11 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const images = [
-    '/image1.png',
-    '/image2.png',
-    '/image3.png',
-    '/image4.png',
-    '/image5.png',
+    '/images/image1.png',
+    '/images/image2.png',
+    '/images/image3.png',
+    '/images/image4.png',
+    '/images/image5.png',
 ]
 
 function useWindowWidth() {

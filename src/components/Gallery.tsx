@@ -13,10 +13,11 @@ const images = [
 ]
 
 function useWindowWidth() {
-    const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0)
+    const [width, setWidth] = useState<number>(0) // Default to 0 to avoid mismatch on initial render
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth)
+        handleResize() // Initialize the width on mount
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
@@ -26,14 +27,21 @@ function useWindowWidth() {
 
 export default function GallerySection() {
     const [index, setIndex] = useState(2)
+    const [hasMounted, setHasMounted] = useState(false) // To track if the component has mounted
     const width = useWindowWidth()
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % images.length)
-        }, 3000)
-        return () => clearInterval(interval)
+        setHasMounted(true) // Set to true once mounted
     }, [])
+
+    useEffect(() => {
+        if (hasMounted) {
+            const interval = setInterval(() => {
+                setIndex((prev) => (prev + 1) % images.length)
+            }, 3000)
+            return () => clearInterval(interval)
+        }
+    }, [hasMounted])
 
     const getRelativeIndex = (i: number) => {
         const half = Math.floor(images.length / 2)
@@ -48,6 +56,9 @@ export default function GallerySection() {
         if (width < 1024) return rel * 140
         return rel * 180
     }
+
+    // Only render the gallery once the component is mounted (client-side)
+    if (!hasMounted) return null
 
     return (
         <section className="relative bg-[#FFFDF1]  flex flex-col items-center justify-center overflow-hidden">

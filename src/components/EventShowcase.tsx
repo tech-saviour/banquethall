@@ -9,7 +9,7 @@ const slides = [
     type: "single",
     items: [
       {
-        src: "/images/slide1.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460078/slide1_omexsq.png",
         text: "EVENTS & SERVICES",
       },
     ],
@@ -18,11 +18,11 @@ const slides = [
     type: "double",
     items: [
       {
-        src: "/images/birthday.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460076/birthday_eujrvm.png",
         text: "BIRTHDAY PARTY",
       },
       {
-        src: "/images/corporate.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460072/corprate_uaypkk.png",
         text: "CORPORATE EVENTS",
       },
     ],
@@ -31,11 +31,11 @@ const slides = [
     type: "double",
     items: [
       {
-        src: "/images/wedding.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460079/wedding_gfvf8h.png",
         text: "WEDDING",
       },
       {
-        src: "/images/shows.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460072/shows_lbcvhi.png",
         text: "SHOWS",
       },
     ],
@@ -68,9 +68,8 @@ export default function EventSlider() {
           {currentSlide.items.map((item, idx) => (
             <div
               key={idx}
-              className={`relative ${
-                currentSlide.type === "double" ? "w-1/2" : "w-full"
-              } h-full`}
+              className={`relative ${currentSlide.type === "double" ? "w-1/2" : "w-full"
+                } h-full`}
             >
               <Image
                 src={item.src}
@@ -78,6 +77,11 @@ export default function EventSlider() {
                 fill
                 loading="lazy"
                 className="object-cover"
+                sizes={
+                  currentSlide.type === "double"
+                    ? "(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
+                    : "(min-width: 1024px) 100vw, (min-width: 640px) 100vw, 100vw"
+                }
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                 <motion.h2

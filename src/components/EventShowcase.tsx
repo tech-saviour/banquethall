@@ -55,7 +55,7 @@ export default function EventSlider() {
   const currentSlide = slides[current];
 
   return (
-    <div className="w-full h-[70vh] sm:h-[95vh] md:h-[100vh]  relative overflow-hidden rounded-xl">
+    <div className="w-full h-[70vh] sm:h-[95vh] md:h-[100vh] relative overflow-hidden rounded-xl">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -67,9 +67,8 @@ export default function EventSlider() {
         >
           {currentSlide.items.map((item, idx) => (
             <div
-              key={idx}
-              className={`relative ${currentSlide.type === "double" ? "w-1/2" : "w-full"
-                } h-full`}
+              key={`${current}-${idx}-${item.src}-${item.text}`}
+              className={`relative ${currentSlide.type === "double" ? "w-1/2" : "w-full"} h-full`}
             >
               <Image
                 src={item.src}
@@ -83,15 +82,38 @@ export default function EventSlider() {
                     : "(min-width: 1024px) 100vw, (min-width: 640px) 100vw, 100vw"
                 }
               />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <motion.h2
-                  className="text-white text-xl md:text-3xl lg:text-4xl font-semibold text-center px-4"
+              <div
+                className={`absolute inset-0 bg-black/40 flex ${
+                  currentSlide.type === "single"
+                    ? "items-center justify-end  pr-8 sm:pr-40"
+                    : "items-start justify-center pt-16 sm:pt-20"
+                }`}
+              >
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
+                  className={`flex flex-col gap-4 ${
+                    currentSlide.type === "single"
+                      ? "text-center items-end"
+                      : "text-center items-start"
+                  }`}
                 >
-                  {item.text}
-                </motion.h2>
+                  <h2 className="text-white uppercase text-2xl sm:text-5xl lg:text-6xl font-serif tracking-[0.2em] drop-shadow-lg leading-tight">
+                    {item.text.includes("&") ? (
+                      <>
+                        EVENTS & <br /> SERVICES
+                      </>
+                    ) : (
+                      item.text
+                    )}
+                  </h2>
+                  {currentSlide.type === "single" && (
+                    <button className="mt-4 px-8 py-2 border border-white text-white rounded-md text-base font-medium hover:bg-white hover:text-black transition duration-300">
+                      Events
+                    </button>
+                  )}
+                </motion.div>
               </div>
             </div>
           ))}

@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const images = [
   'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460073/image1_tkjjnf.png',
@@ -10,77 +10,71 @@ const images = [
   'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460068/image3_nmun4m.png',
   'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460068/image4_p5o1hq.png',
   'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460069/image5_v97axc.png',
-]
+];
 
 function useWindowWidth() {
-  const [width, setWidth] = useState<number>(0)
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth)
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  return width
+  return width;
 }
 
 export default function GallerySection() {
-  const [index, setIndex] = useState(2)
-  const [hasMounted, setHasMounted] = useState(false)
-  const width = useWindowWidth()
+  const [index, setIndex] = useState(2);
+  const width = useWindowWidth();
 
   useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (hasMounted) {
-      const interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % images.length)
-      }, 3000)
-      return () => clearInterval(interval)
-    }
-  }, [hasMounted])
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const getRelativeIndex = (i: number) => {
-    const half = Math.floor(images.length / 2)
-    const diff = i - index
-    if (diff > half) return diff - images.length
-    if (diff < -half) return diff + images.length
-    return diff
-  }
+    const half = Math.floor(images.length / 2);
+    const diff = i - index;
+    if (diff > half) return diff - images.length;
+    if (diff < -half) return diff + images.length;
+    return diff;
+  };
 
   const getTranslateX = (rel: number) => {
-    if (width < 640) return rel * 100
-    if (width < 1024) return rel * 140
-    return rel * 180
-  }
-
-  if (!hasMounted) return null
+    if (width < 640) return rel * 100;
+    if (width < 1024) return rel * 140;
+    return rel * 180;
+  };
 
   return (
     <section className="relative bg-[#FFFDF1] flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-4xl pt-8 sm:pt-16 sm:text-5xl font-serif text-center mb-6 text-gray-800 tracking-widest">Gallery</h2>
-      <div className="flex justify-center mb-12">
-        <div className="-mt-4">
+      <h2 className="text-4xl sm:text-6xl pt-8 sm:pt-16 font-serif text-center text-gray-800 tracking-widest">
+        Gallery
+      </h2>
+      <div className="flex justify-center">
+        <div className="">
           <Image
             src="/vector.png"
             alt="Decoration"
             width={400}
             height={40}
-            className="w-52 h-auto"
+            className="w-40 sm:w-72 h-auto"
           />
         </div>
       </div>
-      <div className="relative w-full flex items-center justify-center h-[240px] sm:h-[350px] md:h-[450px]">
+
+      <div className="relative -mt-12 w-full flex items-center justify-center h-[240px] sm:h-[350px] md:h-[450px]">
         <div className="relative flex items-center justify-center w-fit h-full">
           {images.map((src, i) => {
-            const rel = getRelativeIndex(i)
-            const zIndex = 10 - Math.abs(rel)
-            const scale = 1 - Math.abs(rel) * 0.15
-            const opacity = Math.abs(rel) > 2 ? 0 : 1
-            const translateX = getTranslateX(rel)
+            const rel = getRelativeIndex(i);
+            const zIndex = 10 - Math.abs(rel);
+            const scale = 1 - Math.abs(rel) * 0.15;
+            const opacity = Math.abs(rel) > 2 ? 0 : 1;
+            const translateX = getTranslateX(rel);
 
             return (
               <motion.div
@@ -100,11 +94,18 @@ export default function GallerySection() {
                   sizes="(min-width: 1024px) 500px, (min-width: 640px) 180px, 120px"
                 />
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
+
+      <p className=" text-gray-700 text-sm">Visit the gallery for more such memory</p>
+
+      <button className="mt-4 mb-16 px-6 py-2 border border-gray-700 text-gray-600 text-xl sm:text-3xl rounded hover:bg-gray-100 transition">
+        Gallery
+      </button>
     </section>
-  )
+  );
 }
+
 

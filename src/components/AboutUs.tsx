@@ -4,7 +4,7 @@ export default function AboutUs() {
     return (
         <section className="bg-[#FFFFF0] text-gray-800 px-6 py-16 md:px-16">
             <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl sm:text-5xl font-serif text-center mb-6">About Us</h2>
+    <h2 className="text-4xl sm:text-6xl font-serif text-center mb-6">About Us</h2>
     <div className="flex justify-center mb-12">
         <div className="-mt-4">
             <Image
@@ -12,7 +12,7 @@ export default function AboutUs() {
                 alt="Decoration"
                 width={400}
                 height={40}
-                className="w-62 h-auto"
+                className="w-72 h-auto"
             />
         </div>
     </div>

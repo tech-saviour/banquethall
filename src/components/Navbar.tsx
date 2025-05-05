@@ -47,11 +47,11 @@ export default function Navbar() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${opaque ? 'bg-neutral-900/90 shadow-md' : 'bg-transparent'}`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 text-white"
+        className="mx-auto flex max-w-7xl items-center justify-around md:justify-between  px-4 py-3 text-white"
         aria-label="Primary Navigation"
       >
         <Link href="/" className="leading-tight select-none">
-          <span className="block text-2xl tracking-wide" style={{ fontFamily: 'var(--font-notoSerif)' }}>
+          <span className="block text-xl md:text-3xl  tracking-wide" style={{ fontFamily: 'var(--font-notoSerif)' }}>
             BANQUET&nbsp;HALL
           </span>
           <span className="block text-sm -mt-1" style={{ fontFamily: "'Petemoss', cursive" }}>
@@ -59,7 +59,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden md:flex gap-8 text-lg" style={{ fontFamily: 'var(--font-notoSerif)' }}>
+        <ul className="hidden md:flex gap-20 text-lg" style={{ fontFamily: 'var(--font-notoSerif)' }}>
           {NAV_ITEMS.map(({ label, href }) => (
             <li key={label}>
               <Link href={href} className="transition-colors hover:underline underline-offset-4">

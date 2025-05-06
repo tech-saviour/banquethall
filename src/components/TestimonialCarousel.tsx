@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -42,27 +42,47 @@ const VISIBLE_COUNT = 6;
 export default function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
+  const centerImageControls = useAnimation();
 
   const extendedTestimonials = [...testimonials, ...testimonials];
 
   useEffect(() => {
     const animate = async () => {
+      // Enlarge center image
+      await centerImageControls.start({
+        width: 300,
+        height: 380,
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeInOut" },
+      });
+
+      // Hold for 1.2s
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+
+      // Shrink back to original
+      await centerImageControls.start({
+        width: 120,
+        height: 180,
+        opacity: 0.7,
+        transition: { duration: 0.6, ease: "easeInOut" },
+      });
+
+      // Slide carousel
       await controls.start({
-        x: -150, // adjust based on width of each card
+        x: -150,
         transition: { duration: 1, ease: "easeInOut" },
       });
 
-      // Reset position and update index
+      // Slight delay before updating index
+      await new Promise((resolve) => setTimeout(resolve, 100));
       controls.set({ x: 0 });
       setIndex((prev) => (prev + 1) % testimonials.length);
     };
 
-    const interval = setInterval(() => {
-      animate();
-    }, 4000);
+    const interval = setInterval(animate, 4000);
 
     return () => clearInterval(interval);
-  }, [controls]);
+  }, [controls, centerImageControls]);
 
   const visibleTestimonials = extendedTestimonials.slice(index, index + VISIBLE_COUNT);
 
@@ -72,7 +92,7 @@ export default function TestimonialCarousel() {
         Testimonials
       </h2>
       <div className="flex justify-center">
-        <div className="">
+        <div>
           <Image
             src="/vector.png"
             alt="Decoration"
@@ -84,10 +104,10 @@ export default function TestimonialCarousel() {
       </div>
 
       {/* Image carousel */}
-      <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[900px] h-[400px] overflow-hidden">
+      <div className="absolute justify-end flex top-28 left-1/2 transform -translate-x-1/2 w-[900px] h-[400px] overflow-hidden">
         <motion.div animate={controls} className="flex gap-4 items-end w-fit">
           {visibleTestimonials.map((testimonial, i) => {
-            const isCenter = i === 1;
+            const isCenter = i === 2;
 
             if (isCenter) {
               return (
@@ -95,8 +115,7 @@ export default function TestimonialCarousel() {
                   key={`${testimonial.image}-${i}`}
                   className="relative z-10"
                   initial={{ width: 120, height: 180, opacity: 0.7 }}
-                  animate={{ width: 300, height: 380, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  animate={centerImageControls}
                 >
                   <Image
                     src={testimonial.image}
@@ -123,27 +142,26 @@ export default function TestimonialCarousel() {
               </div>
             );
           })}
-
-
-
-
         </motion.div>
       </div>
 
       {/* Testimonial Text for center image */}
-      <motion.div
-        key={visibleTestimonials[1].name}
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="absolute top-32 right-10 w-[35%] bg-[#FFFDF1] p-6 rounded-md shadow-md backdrop-blur-sm"
-      >
-        <h3 className="text-xl font-semibold">{visibleTestimonials[1].name}</h3>
-        <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={visibleTestimonials[1].name}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -30 }}
+          transition={{ duration: 0.6 }}
+          className="absolute top-32 right-10 w-[35%] bg-[#FFFDF1] p-6 rounded-md shadow-md backdrop-blur-sm"
+        >
+          <h3 className="text-xl font-semibold">{visibleTestimonials[1].name}</h3>
+          <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
+        </motion.div>
+      </AnimatePresence>
 
       {/* CTA */}
-      <div className="absolute bottom-0 w-full py-10 bg-[#FFFDF1] text-center  border-gray-300">
+      <div className="absolute bottom-0 w-full py-10 bg-[#FFFDF1] text-center border-gray-300">
         <p className="text-sm mb-4 text-gray-700">
           For further testimonials of our quality and legacy visit the testimonials page.
         </p>
@@ -154,4 +172,6 @@ export default function TestimonialCarousel() {
     </div>
   );
 }
+
+
 

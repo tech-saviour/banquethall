@@ -67,27 +67,66 @@ export default function TestimonialCarousel() {
   const visibleTestimonials = extendedTestimonials.slice(index, index + VISIBLE_COUNT);
 
   return (
-    <div className="relative w-full h-[650px] bg-gradient-to-b from-[#f8f4ef] to-[#eae8e3] overflow-hidden">
-      <h2 className="text-4xl font-serif font-bold text-center mt-8">Testimonials</h2>
+    <div className="relative w-full text-black h-[650px] bg-[#FFFDF1] overflow-hidden">
+      <h2 className="text-4xl sm:text-5xl font-serif text-center text-gray-800 tracking-widest">
+        Testimonials
+      </h2>
+      <div className="flex justify-center">
+        <div className="">
+          <Image
+            src="/vector.png"
+            alt="Decoration"
+            width={400}
+            height={40}
+            className="w-40 sm:w-96 h-auto"
+          />
+        </div>
+      </div>
 
       {/* Image carousel */}
       <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[900px] h-[400px] overflow-hidden">
         <motion.div animate={controls} className="flex gap-4 items-end w-fit">
-          {visibleTestimonials.map((testimonial, index) => (
-            <div
-              key={`${testimonial.image}-${index}`}
-              className={`relative transition-all duration-500 ${
-                index === 1 ? "h-[380px] w-[300px] z-10" : "h-[180px] w-[120px] opacity-70"
-              }`}
-            >
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                fill
-                className="object-cover rounded-md shadow-md"
-              />
-            </div>
-          ))}
+          {visibleTestimonials.map((testimonial, i) => {
+            const isCenter = i === 1;
+
+            if (isCenter) {
+              return (
+                <motion.div
+                  key={`${testimonial.image}-${i}`}
+                  className="relative z-10"
+                  initial={{ width: 120, height: 180, opacity: 0.7 }}
+                  animate={{ width: 300, height: 380, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover rounded-md shadow-md"
+                  />
+                </motion.div>
+              );
+            }
+
+            return (
+              <div
+                key={`${testimonial.image}-${i}`}
+                className="relative z-0 opacity-70"
+                style={{ width: 120, height: 180 }}
+              >
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  className="object-cover rounded-md shadow-md"
+                />
+              </div>
+            );
+          })}
+
+
+
+
         </motion.div>
       </div>
 
@@ -97,14 +136,14 @@ export default function TestimonialCarousel() {
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="absolute top-32 right-10 w-[35%] bg-white/70 p-6 rounded-md shadow-md backdrop-blur-sm"
+        className="absolute top-32 right-10 w-[35%] bg-[#FFFDF1] p-6 rounded-md shadow-md backdrop-blur-sm"
       >
         <h3 className="text-xl font-semibold">{visibleTestimonials[1].name}</h3>
         <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
       </motion.div>
 
       {/* CTA */}
-      <div className="absolute bottom-0 w-full py-10 bg-[#f8f4ef] text-center border-t border-gray-300">
+      <div className="absolute bottom-0 w-full py-10 bg-[#FFFDF1] text-center  border-gray-300">
         <p className="text-sm mb-4 text-gray-700">
           For further testimonials of our quality and legacy visit the testimonials page.
         </p>

@@ -99,10 +99,13 @@ export default function EventSlider() {
                       : "text-center items-start"
                   }`}
                 >
-                  <h2 className="text-white uppercase text-2xl sm:text-5xl lg:text-6xl font-serif tracking-[0.2em] drop-shadow-lg leading-tight">
+                  <h2 className="text-white uppercase text-xl sm:text-5xl lg:text-6xl font-serif tracking-[0.2em] drop-shadow-lg leading-tight">
                     {item.text.includes("&") ? (
                       <>
+                      <div className="text-2xl sm:text-5xl tracking-[0.2em] leading-loose">
+
                         EVENTS & <br /> SERVICES
+                      </div>
                       </>
                     ) : (
                       item.text

@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { label: 'Gallery',      href: '/#gallery' },
   { label: 'Services',     href: '/#services' },
   { label: 'Testimonials', href: '/#testimonials' },
-  { label: 'Contact',      href: '/#contact' },
+  { label: 'Contact',      href: '/contactus' },
 ]
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${opaque ? 'bg-neutral-900/90 shadow-md' : 'bg-transparent'}`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-around md:justify-between  px-4 py-3 text-white"
+        className="mx-auto flex max-w-7xl items-center justify-between  px-4 py-3 text-white"
         aria-label="Primary Navigation"
       >
         <Link href="/" className="leading-tight select-none">

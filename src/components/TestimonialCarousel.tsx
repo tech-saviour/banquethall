@@ -5,37 +5,37 @@ import Image from "next/image";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const testimonials = [
-  {
-    name: "Rachael Schumm",
-    text: "Molestias ut tenetur eos placeat aliquam quaerat cumque. Quis autem id sed doloribus eos et enim et dolor.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465663/testimonial_hhvyml.png",
-  },
-  {
-    name: "Michael Doe",
-    text: "Quisquam voluptatum totam ad, architecto nemo reprehenderit tempora ipsam.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465830/testimonial1_snnius.png",
-  },
-  {
-    name: "Anna Lee",
-    text: "Dolores commodi illum at est maiores et quia!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465832/testimonial2_ie5ppe.png",
-  },
-  {
-    name: "James Bond",
-    text: "Aliquam officiis iste optio eveniet! Voluptatibus hic amet rem deserunt.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial4_hyevol.png",
-  },
-  {
-    name: "Sophie Turner",
-    text: "Nisi amet in similique reiciendis vitae eveniet facere.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial3_lfhr47.png",
-  },
-  {
-    name: "Liam Smith",
-    text: "Perspiciatis officia quidem sint eaque corporis alias fugiat.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746466123/testimonial5_xvld7m.jpg",
-  },
-];
+    {
+      name: "Ananya Sharma",
+      text: "The banquet hall was absolutely stunning and perfect for our wedding. Everything was beautifully organized and stress-free!",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465663/testimonial_hhvyml.png",
+    },
+    {
+      name: "Rahul Verma",
+      text: "I was amazed by the decor and hospitality. The staff ensured our event went smoothly. Highly recommend this venue!",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465830/testimonial1_snnius.png",
+    },
+    {
+      name: "Priya Kapoor",
+      text: "Elegant interiors, top-notch service, and great food. This banquet hall exceeded all our expectations!",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465832/testimonial2_ie5ppe.png",
+    },
+    {
+      name: "Amit Joshi",
+      text: "We hosted our daughter’s engagement here and the experience was flawless. The ambiance is luxurious and welcoming.",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial4_hyevol.png",
+    },
+    {
+      name: "Meera Iyer",
+      text: "A beautiful venue with excellent lighting and spacious layout. Our guests were truly impressed.",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial3_lfhr47.png",
+    },
+    {
+      name: "Karan Mehta",
+      text: "The best banquet hall in New Delhi! Classy décor, helpful staff, and a truly memorable experience.",
+      image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746466123/testimonial5_xvld7m.jpg",
+    },
+  ];
 
 const VISIBLE_COUNT = 6;
 
@@ -64,7 +64,7 @@ export default function TestimonialCarousel() {
         width: 120,
         height: 180,
         opacity: 0.7,
-        transition: { duration: 0.6, ease: "easeInOut" },
+        transition: { duration: 1, ease: "easeInOut" },
       });
 
       // Slide carousel

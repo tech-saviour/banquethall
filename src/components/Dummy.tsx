@@ -6,7 +6,6 @@ import { motion, useAnimation } from "framer-motion";
 
 const CARD_WIDTH = 120;
 const CARD_GAP = 40;
-const ENLARGED_WIDTH = 300;
 const SLIDE_DURATION = 1;
 const INTERVAL = 4000;
 
@@ -47,7 +46,7 @@ const testimonials = [
 
 // Unchanged imports and constants...
 
-export default function TestimonialSlider() {
+export default function Dummy() {
     const controls = useAnimation();
     const [index, setIndex] = useState(0);
     const fullList = [...testimonials, ...testimonials];

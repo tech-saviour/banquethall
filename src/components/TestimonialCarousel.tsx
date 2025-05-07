@@ -107,7 +107,7 @@ export default function TestimonialCarousel() {
   const visibleTestimonials = extendedTestimonials.slice(index, index + VISIBLE_COUNT);
 
   return (
-    <div className="relative w-full text-black h-[650px] bg-[#FFFDF1] overflow-hidden">
+    <div className="relative w-full text-black h-[650px] bg-[#F8F1E9] overflow-hidden">
       <h2 className="text-4xl sm:text-5xl font-serif text-center text-gray-800 tracking-widest">
         Testimonials
       </h2>
@@ -187,7 +187,7 @@ export default function TestimonialCarousel() {
       </div>
 
       {/* CTA */}
-      <div className="absolute bottom-0 w-full py-10 bg-[#FFFDF1] text-center border-gray-300">
+      <div className="absolute bottom-0 w-full py-10 bg-[#F8F1E9] text-center border-gray-300">
         <p className="text-sm mb-4 text-gray-700">
           For further testimonials of our quality and legacy visit the testimonials page.
         </p>

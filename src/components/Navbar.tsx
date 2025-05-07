@@ -7,14 +7,15 @@ import { Menu, X } from 'lucide-react'
 
 const NAV_ITEMS = [
   { label: 'Home',         href: '/' },
-  { label: 'About',        href: '/#about' },
-  { label: 'Gallery',      href: '/#gallery' },
-  { label: 'Services',     href: '/#services' },
-  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'About',        href: '/about' },
+  { label: 'Gallery',      href: '/gallery' },
+  { label: 'Services',     href: '/services' },
+  { label: 'Testimonials', href: '/testimonials' },
   { label: 'Contact',      href: '/contactus' },
 ]
 
-export default function Navbar() {
+export default function Navbar()
+ {
   const [opaque, setOpaque] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 

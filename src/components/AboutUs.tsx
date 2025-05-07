@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
     return (
-        <section className="bg-[#FFFFF0] text-gray-800 px-6 py-12 md:px-16">
+        <section className="bg-[#F8F1E9] text-gray-800 px-6 py-12 md:px-16">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl sm:text-6xl font-serif text-center mb-4">About Us</h2>
                 <div className="flex justify-center mb-4">

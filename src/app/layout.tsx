@@ -1,15 +1,14 @@
 // app/layout.tsx
+"use client"
 import Navbar from '@/components/Navbar'
 import './globals.css'
-import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
+import { usePathname } from 'next/navigation'
 
-export const metadata: Metadata = {
-  title: 'Banquet Hall | New Delhi',
-  description: 'Elegant banquet hall in New Delhi for weddings, events, and more.',
-}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isservicePage = pathname?.startsWith("/services") || false;
   return (
     <html lang="en">
       <head>
@@ -21,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        <Navbar/>{children}
+        {!isservicePage && <Navbar />}{children}
         <Footer />
       </body>
     </html>

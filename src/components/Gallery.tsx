@@ -51,7 +51,7 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="relative bg-[#FFFDF1] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative bg-[#F8F1E9] flex flex-col items-center justify-center overflow-hidden">
       <h2 className="text-4xl sm:text-6xl pt-8 sm:pt-16 font-serif text-center text-gray-800 tracking-widest">
         Gallery
       </h2>

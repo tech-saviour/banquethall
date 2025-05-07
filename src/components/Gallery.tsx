@@ -67,7 +67,7 @@ export default function GallerySection() {
         </div>
       </div>
 
-      <div className="relative -mt-12 w-full flex items-center justify-center h-[240px] sm:h-[350px] md:h-[450px]">
+      <div className="relative  w-full flex items-center justify-center h-[240px] sm:h-[350px] md:h-[450px]">
         <div className="relative flex items-center justify-center w-fit h-full">
           {images.map((src, i) => {
             const rel = getRelativeIndex(i);
@@ -79,7 +79,7 @@ export default function GallerySection() {
             return (
               <motion.div
                 key={i}
-                className="absolute rounded-xl shadow-xl overflow-hidden w-[120px] h-4/6 sm:w-[180px] sm:h-2/6 md:w-[500px] md:h-5/6"
+                className="absolute rounded-xl shadow-xl overflow-hidden w-[150px] h-6/6 sm:w-[180px] sm:h-2/6 md:w-[500px] md:h-5/6"
                 animate={{ x: translateX, scale, opacity }}
                 initial={false}
                 transition={{ duration: 0.7, ease: 'easeInOut' }}

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import ServiceBlock from '@/components/ServiceBlock';
 const NAV_ITEMS = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
@@ -37,7 +38,7 @@ const ServicesSection = () => {
 
     return (
 
-        <section className="relative w-full min-h-screen">
+        <section className="relative bg-[#F8F1E9] w-full min-h-screen">
             <header
                 className='fixed inset-x-0 top-0 z-50 transition-colors duration-300  bg-neutral-900/90 shadow-md'
             >
@@ -110,20 +111,20 @@ const ServicesSection = () => {
                     Our Services
                 </h2>
                 <div className="flex justify-center mb-4">
-                                    <div className="">
-                                        <Image
-                                            src="/vector2.png"
-                                            alt="Decoration"
-                                            width={400}
-                                            height={40}
-                                            className="w-52 sm:w-120 h-auto"
-                                        />
-                                    </div>
-                                </div>
+                    <div className="">
+                        <Image
+                            src="/vector2.png"
+                            alt="Decoration"
+                            width={400}
+                            height={40}
+                            className="w-52 sm:w-120 h-auto"
+                        />
+                    </div>
+                </div>
             </div>
 
             {/* Background Image */}
-            <div className="relative w-full h-[75vh] md:h-screen">
+            <div className="relative mb-20 w-full h-[75vh] md:h-screen">
                 <Image
                     src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746638706/services_fz5af3.jpg"
                     alt="Our services - wedding celebration"
@@ -151,6 +152,36 @@ const ServicesSection = () => {
                     </p>
                 </motion.div>
             </div>
+            {/* Service Cards */}
+
+                <ServiceBlock
+                    title="Engagement"
+                    description="Host an unforgettable engagement celebration in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your special announcement."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746710719/engagement_ycbgsg.jpg"
+                    reverse={false}
+                />
+
+                <ServiceBlock
+                    title="Wedding"
+                    description="Make your big day truly magical with our spacious and luxurious wedding hall. From grand entrances to exquisite catering, we provide everything you need to turn your dream wedding into reality."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746711758/weeding_fcgsoz.png"
+                    reverse={true}
+                />
+                <div className='py-0 md:py-20' ></div>
+                <ServiceBlock
+                    title="Birthday"
+                    description="Celebrate your special day in style with our vibrant birthday party venue. With customizable themes, delicious catering, and a lively atmosphere, we ensure your birthday bash is unforgettable."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746722266/birthda_uxytp3.png"
+                    reverse={false}
+                />
+
+                <ServiceBlock
+                    title="Corporate Events"
+                    description="Host an unforgettable engagement celebration in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your special announcement."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746722266/ce_p45zpw.png"
+                    reverse={true}
+                />
+                 <div className='py-0 md:py-20' ></div>
         </section>
     );
 };

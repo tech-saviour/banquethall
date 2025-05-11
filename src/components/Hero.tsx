@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen bg-cover bg-center flex items-center  justify-start text-white overflow-hidden">
+    <section className="relative h-96 md:h-screen bg-cover bg-center flex items-center  justify-start text-white overflow-hidden">
       {/* Base background image (hero.jpg) */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -20,13 +20,11 @@ export default function Hero() {
         style={{ backgroundImage: "url('/upperbg.png')",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          
-
          }}
       />
 
       {/* Fade overlay */}
-      <div className="absolute inset-0 z-5 bg-black/30" />
+      <div className="absolute inset-0 z-5 bg-black/45" />
 
       {/* Animated text content only */}
       <motion.div

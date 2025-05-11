@@ -7,19 +7,19 @@ import { motion } from 'framer-motion';
 export default function ContactUs() {
   return (
     <section
-      className="relative w-full min-h-screen bg-cover bg-top flex items-center justify-center p-4"
+      className="relative w-full h-[80vh] sm:min-h-screen bg-cover bg-top flex items-center justify-center p-4"
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/dtswx9pbk/image/upload/v1746612024/contact_vfjxbe.jpg')",
         backgroundPosition: 'top',
-        backgroundPositionX: '75%',
+        backgroundPositionX: '35%',
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40 z-0" />
+      <div className="absolute inset-0 bg-black opacity-45 z-0" />
 
       {/* Contact Content */}
-      <div className="relative mt-20 z-10 flex flex-col lg:flex-row w-full max-w-6xl text-white gap-8 items-center lg:items-start justify-center md:justify-between">
+      <div className="relative  mt-24 sm:mt-20 z-10 flex flex-col sm:flex-row w-full max-w-6xl text-white gap-8 items-center lg:items-start justify-center md:justify-between">
         {/* Contact Info */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -31,7 +31,7 @@ export default function ContactUs() {
           {[{
             Icon: MapPin,
             title: "Our main Office",
-            content: <>Sector -69, Delhi<br />Rohit Sharma<br />Ka Ghar</>
+            content: <> Delhi<br />Rohini</>
           }, {
             Icon: Phone,
             title: "Phone number",
@@ -39,16 +39,16 @@ export default function ContactUs() {
           }, {
             Icon: Mail,
             title: "E-mail",
-            content: <>ID-preetybanquet@gmail.com</>
+            content: <>preetybanquet@gmail.com</>
           }].map(({ Icon, title, content }, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-white/40 p-6 backdrop-blur rounded-md w-full max-w-xs"
+              className="bg-white/40 hidden sm:block p-6 backdrop-blur rounded-md w-full max-w-xs"
             >
-              <div className="text-black">
-                <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
-                  <Icon className="w-5 h-5" /> {title}
+              <div className="text-black text-sm sm:text-xl">
+                <h2 className=" font-bold mb-2 flex items-center gap-2">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" /> {title}
                 </h2>
                 <p>{content}</p>
               </div>
@@ -70,25 +70,25 @@ export default function ContactUs() {
             <motion.input
               type="text"
               placeholder="Enter your name"
-              className="p-3 rounded-md text-black bg-white/80 focus:outline-none"
+              className=" p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.input
               type="email"
               placeholder="Enter your valid Email address"
-              className="p-3 rounded-md text-black bg-white/80 focus:outline-none"
+              className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.textarea
               placeholder="Write your query here we are here to listen you"
-              rows={4}
-              className="p-3 rounded-md text-black bg-white/80 focus:outline-none"
+              rows={3}
+              className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.button
               type="submit"
               whileTap={{ scale: 0.95 }}
-              className="mt-2 self-start border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
+              className="mt-2 self-start  border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
             >
               Submit
             </motion.button>

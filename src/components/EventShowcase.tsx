@@ -55,7 +55,7 @@ export default function EventSlider() {
   const currentSlide = slides[current];
 
   return (
-    <div className="w-full h-[70vh] sm:h-[95vh] md:h-[100vh] relative overflow-hidden rounded-xl">
+    <div className="w-full h-[60vh] sm:h-[70vh] md:h-[80vh] relative overflow-hidden rounded-xl">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative h-96 md:h-screen bg-cover bg-center flex items-center  justify-start text-white overflow-hidden">
+    <section className="relative h-[80vh] md:h-screen bg-cover bg-center flex items-center  justify-start text-white overflow-hidden">
       {/* Base background image (hero.jpg) */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -28,7 +28,7 @@ export default function Hero() {
 
       {/* Animated text content only */}
       <motion.div
-        className="relative lg:ml-14 z-5 lg:-mt-20 text-left px-4 lg:px-20"
+        className="relative lg:ml-14 z-15 sm:z-5 lg:-mt-20 text-left px-4 lg:px-20"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}

@@ -1,5 +1,6 @@
 import Gphoto from '@/components/Gphoto'
 import MemSlider from '@/components/MemSlider'
+import PhotoGallery from '@/components/PhotoGallery'
 import React from 'react'
 
 const page = () => {
@@ -7,6 +8,7 @@ const page = () => {
     <div>
       <Gphoto/>
       <MemSlider/>
+      <PhotoGallery/>
     </div>
   )
 }

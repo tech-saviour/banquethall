@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const images = [
   'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460073/image1_tkjjnf.png',
@@ -51,11 +52,11 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="relative bg-[#F8F1E9] flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-4xl sm:text-6xl pt-8 sm:pt-16 font-serif text-center text-gray-800 tracking-widest">
+    <section className="relative bg-[#F8F1E9] text-[#393b39] flex flex-col items-center justify-center overflow-hidden">
+      <h2 className="text-4xl sm:text-6xl pt-8 sm:pt-12 font-serif text-center tracking-widest">
         Gallery
       </h2>
-      <div className="flex justify-center">
+      <div className="flex mb-2 sm:mb-0 justify-center">
         <div className="">
           <Image
             src="/vector.png"
@@ -79,7 +80,7 @@ export default function GallerySection() {
             return (
               <motion.div
                 key={i}
-                className="absolute rounded-xl shadow-xl overflow-hidden w-[150px] h-6/6 sm:w-[180px] sm:h-2/6 md:w-[500px] md:h-5/6"
+                className="absolute rounded-xl shadow-xl overflow-hidden w-[170px] h-[50vh] sm:w-[180px] sm:h-2/6 md:w-[500px] md:h-5/6"
                 animate={{ x: translateX, scale, opacity }}
                 initial={false}
                 transition={{ duration: 0.7, ease: 'easeInOut' }}
@@ -99,11 +100,14 @@ export default function GallerySection() {
         </div>
       </div>
 
-      <p className=" text-gray-700 text-sm">Visit the gallery for more such memory</p>
+      <p className="  mt-10 sm:mt-0 sm:text-xl text-sm">Visit the gallery for more such memory</p>
 
-      <button className="mt-4 mb-16 px-6 py-2 border border-gray-700 text-gray-600 text-xl sm:text-3xl rounded hover:bg-gray-100 transition">
+      <Link
+        href="/gallery"
+        className="inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+      >
         Gallery
-      </button>
+      </Link>
     </section>
   );
 }

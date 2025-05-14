@@ -107,24 +107,25 @@ const ServicesSection = () => {
             </header>
             {/* Top Heading */}
             <div className="bg-[#F8F1E9] py-8 text-center border-b">
-                <h2 className="text-3xl mt-20 md:text-7xl font-semibold text-[#393b39] tracking-wide">
+                <h2 className="text-3xl mt-14 sm:mt-16 md:text-5xl font-semibold text-[#393b39] tracking-wide">
                     Our Services
                 </h2>
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-2 sm:mb-3">
                     <div className="">
                         <Image
                             src="/vector2.png"
                             alt="Decoration"
                             width={400}
                             height={40}
-                            className="w-52 sm:w-120 h-auto"
+                            className="w-52 sm:w-80 h-auto"
                         />
                     </div>
                 </div>
             </div>
 
             {/* Background Image */}
-            <div className="relative mb-20 w-full h-[75vh] md:h-screen">
+            <div className="relative mb-20 w-full h-[55vh] sm:h-[65vh] md:h-[70vh]">
+                <div className="absolute inset-0 z-5 h-[55vh] sm:h-[65vh] md:h-[70vh]  bg-black/30" />
                 <Image
                     src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746638706/services_fz5af3.jpg"
                     alt="Our services - wedding celebration"
@@ -139,7 +140,7 @@ const ServicesSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: 'easeOut' }}
                     viewport={{ once: true }}
-                    className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 text-white"
+                    className="absolute z-10 inset-0 flex flex-col items-center justify-center text-center px-4 text-white"
                 >
                     <p className="text-sm md:text-3xl tracking-widest mb-2">
                         Services, events and pricing
@@ -179,6 +180,20 @@ const ServicesSection = () => {
                     title="Corporate Events"
                     description="Host an unforgettable engagement celebration in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your special announcement."
                     image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746722266/ce_p45zpw.png"
+                    reverse={true}
+                />
+                 <div className='py-0 md:py-20' ></div>
+                 <ServiceBlock
+                    title="Training Events"
+                    description="Elevate your team's skills with our comprehensive training events. We offer customizable programs, expert instructors, and a collaborative environment to ensure your training is effective and engaging."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747237713/Rectangle_467_bz53eg.png"
+                    reverse={false}
+                />
+
+                <ServiceBlock
+                    title="Meetings"
+                    description="Host an unforgettable meeting in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your important discussions."
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747237706/Rectangle_468_balgro.png"
                     reverse={true}
                 />
                  <div className='py-0 md:py-20' ></div>

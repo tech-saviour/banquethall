@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from 'next/link';
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const testimonials = [
@@ -107,8 +108,8 @@ export default function TestimonialCarousel() {
   const visibleTestimonials = extendedTestimonials.slice(index, index + VISIBLE_COUNT);
 
   return (
-    <div className="relative w-full text-black h-[650px] bg-[#F8F1E9] overflow-hidden">
-      <h2 className="text-4xl sm:text-5xl font-serif text-center text-gray-800 tracking-widest">
+    <div className="relative w-full text-[#393b39] h-[650px] bg-[#F8F1E9] overflow-hidden">
+      <h2 className="text-4xl sm:text-5xl font-serif text-center  tracking-widest">
         Testimonials
       </h2>
 
@@ -188,12 +189,15 @@ export default function TestimonialCarousel() {
 
       {/* CTA */}
       <div className="absolute bottom-0 w-full py-10 bg-[#F8F1E9] text-center border-gray-300">
-        <p className="text-sm mb-4 text-gray-700">
+        <p className="text-base sm:text-xl mb-4 ">
           For further testimonials of our quality and legacy visit the testimonials page.
         </p>
-        <button className="px-6 py-2 border border-black text-black font-semibold hover:bg-black hover:text-white transition">
-          TESTIMONIALS
-        </button>
+        <Link
+          href="/gallery"
+          className="inline-block p-2  border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+        >
+          Testimonials
+        </Link>
       </div>
     </div>
   );

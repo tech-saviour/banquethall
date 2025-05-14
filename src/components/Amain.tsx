@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Amain() {
     return (
 
-        <section className="bg-[#F8F1E9] h-[100vh] w-full text-gray-800 px-6 py-20 md:px-16"
+        <section className="bg-[#F8F1E9] h-[100vh] w-full text-[#393b39] px-6 py-20 md:px-16"
         style={{
         backgroundImage:
           "url('https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png')",

@@ -17,7 +17,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-[#F8F1E9] text-[#3c2b1c] py-10 px-4 border-t"
+      className="bg-[#F8F1E9] text-[#393b39] py-10 px-4 border-t"
     >
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Logo Title */}

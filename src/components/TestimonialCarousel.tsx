@@ -13,12 +13,12 @@ const testimonials = [
   {
     name: "Mehak Verma",
     text: "I was amazed by the decor and hospitality. The staff ensured our event went smoothly. Highly recommend this venue!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244581/testimonial3_f8wvwz.jpg",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial4_hyevol.png",
   },
   {
     name: "Piyush Kapoor",
     text: "Elegant interiors, top-notch service, and great food. This banquet hall exceeded all our expectations!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465832/testimonial2_ie5ppe.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244581/testimonial3_f8wvwz.jpg",
   },
   {
     name: "Amit Joshi",
@@ -28,7 +28,7 @@ const testimonials = [
   {
     name: "Meera Iyer",
     text: "A beautiful venue with excellent lighting and spacious layout. Our guests were truly impressed.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial3_lfhr47.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465830/testimonial1_snnius.png",
   },
   {
     name: "Karan Mehta",

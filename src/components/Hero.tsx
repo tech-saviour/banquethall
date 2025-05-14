@@ -8,19 +8,21 @@ export default function Hero() {
       {/* Base background image (hero.jpg) */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero.jpg')",
+        style={{
+          backgroundImage: "url('/hero.jpg')",
           backgroundPosition: 'center',
 
-         }}
+        }}
       />
 
       {/* Upper background image (upperbg.png) */}
       <div
         className="absolute inset-0 z-10 bg-cover bg-center opacity-60 pointer-events-none"
-        style={{ backgroundImage: "url('/upperbg.png')",
+        style={{
+          backgroundImage: "url('/upperbg.png')",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-         }}
+        }}
       />
 
       {/* Fade overlay */}
@@ -35,28 +37,27 @@ export default function Hero() {
       >
         <h2
           className="text-xl text-left sm:text-3xl md:text-4xl lg:text-6xl tracking-widest "
-          style={{ fontFamily: "'Noto Serif JP', serif",letterSpacing: '0.35em' }}
+          style={{ fontFamily: "'Noto Serif JP', serif", letterSpacing: '0.35em' }}
         >
           SIMPLY PRETTY
         </h2>
         <h1
           className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-tight md:tracking-widest"
-          style={{ fontFamily: "'Noto Serif JP', serif",letterSpacing: '0.28em' }}
+          style={{ fontFamily: "'Noto Serif JP', serif", letterSpacing: '0.28em' }}
         >
           BANQUET HALLS
         </h1>
-        <div className="mt-4 mb-2 w-full flex justify-center">
-          <div className="w-24 h-px bg-white" />
-        </div>
-        
-        <p
-          className="text-2xl text-center italic"
-          style={{ fontFamily: "'Petemoss', cursive" }}
-        >
-          New Delhi
-        </p>
-        <div className="mt-2 w-full flex justify-center">
-          <div className="w-24 h-px bg-white" />
+        <div className='flex items-center gap-1 sm:gap-2 sm:flex-wrap sm:flex-row sm:justify-center text-center sm:text-left text-sm'>
+          <div className="w-20 sm:w-40 md:w-80 border-t border-[#fff]" />
+          <p> ★</p>
+          <p
+            className="text-2xl text-center italic"
+            style={{ fontFamily: "'Petemoss', cursive" }}
+          >
+            New Delhi
+          </p>
+          <p> ★</p>
+          <div className="w-20 sm:w-40 md:w-80 border-t border-[#fff]" />
         </div>
       </motion.div>
     </section>
@@ -64,5 +65,4 @@ export default function Hero() {
 }
 
 
-  
-  
+

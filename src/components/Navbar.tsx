@@ -52,12 +52,20 @@ export default function Navbar()
         aria-label="Primary Navigation"
       >
         <Link href="/" className="leading-tight select-none">
-          <span className="block text-xl md:text-3xl  tracking-wide" style={{ fontFamily: 'var(--font-notoSerif)' }}>
+          <span className="block text-xl  sm:text-3xl  tracking-wide" style={{ fontFamily: 'var(--font-notoSerif)' }}>
             BANQUET&nbsp;HALL
           </span>
+        <div className='flex items-center gap-1 sm:gap-2 sm:flex-wrap sm:flex-row sm:justify-start text-center sm:text-left text-sm'>
+          
+            <div className="sm:ml-2  w-12 md:w-16 sm:w-24 border-t border-[#fff]" />
+          <p className='text-[8px]'> ★</p>
+
           <span className="block text-sm -mt-1" style={{ fontFamily: "'Petemoss', cursive" }}>
             New&nbsp;Delhi
           </span>
+          <p className='text-[8px]'> ★</p>
+          <div className=" w-12 md:w-16 sm:w-24  border-t border-[#fff]" />
+          </div>
         </Link>
 
         <ul className="hidden md:flex gap-20 text-lg" style={{ fontFamily: 'var(--font-notoSerif)' }}>

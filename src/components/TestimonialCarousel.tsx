@@ -14,7 +14,7 @@ const testimonials = [
   {
     name: "Mehak Verma",
     text: "I was amazed by the decor and hospitality. The staff ensured our event went smoothly. Highly recommend this venue!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465830/testimonial1_snnius.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244581/testimonial3_f8wvwz.jpg",
   },
   {
     name: "Piyush Kapoor",
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Amit Joshi",
     text: "We hosted our daughter’s engagement here and the experience was flawless. The ambiance is luxurious and welcoming.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial4_hyevol.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244726/testimonial2_krjdah.jpg",
   },
   {
     name: "Meera Iyer",
@@ -185,19 +185,6 @@ export default function TestimonialCarousel() {
       <div className="sm:hidden mt-6 px-6 text-center">
         <h3 className="text-lg font-semibold">{visibleTestimonials[1].name}</h3>
         <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
-      </div>
-
-      {/* CTA */}
-      <div className="absolute bottom-0 w-full py-10 bg-[#F8F1E9] text-center border-gray-300">
-        <p className="text-base sm:text-xl mb-4 ">
-          For further testimonials of our quality and legacy visit the testimonials page.
-        </p>
-        <Link
-          href="/gallery"
-          className="inline-block p-2  border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
-        >
-          Testimonials
-        </Link>
       </div>
     </div>
   );

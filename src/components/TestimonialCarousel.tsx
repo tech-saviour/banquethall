@@ -118,7 +118,7 @@ export default function TestimonialCarousel() {
           alt="Decoration"
           width={400}
           height={40}
-          className="w-40 sm:w-96 h-auto"
+          className="w-72 sm:w-96 h-auto"
         />
       </div>
 
@@ -181,7 +181,7 @@ export default function TestimonialCarousel() {
       </AnimatePresence>
 
       {/* Testimonial Text (Mobile - Static) */}
-      <div className="sm:hidden mt-6 px-6 text-center">
+      <div className="sm:hidden px-6 text-center">
         <h3 className="text-lg font-semibold">{visibleTestimonials[1].name}</h3>
         <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
       </div>

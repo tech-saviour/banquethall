@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isservicePage = pathname?.startsWith("/services") ||pathname?.startsWith("/about") || false;
+  const isservicePage = pathname?.startsWith("/services") ||pathname?.startsWith("/about") || pathname?.startsWith("/testimonials") || false;
 
   return (
     <html lang="en">

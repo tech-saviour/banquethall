@@ -1,6 +1,5 @@
 "use client"
-import AboutText from '@/components/AboutText'
-import Amain from '@/components/Amain'
+import Testimonial from '@/components/Testimonial'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -13,25 +12,26 @@ const NAV_ITEMS = [
   { label: 'Contact', href: '/contactus' },
 ]
 
-const About = () => {
+
+const Page = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  const trayRef = useRef<HTMLDivElement>(null)
-  const overlayRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const overlay = overlayRef.current
-    if (!overlay) return
-
-    // Show/Hide overlay on mobile menu open/close
-    if (mobileOpen) {
-      overlay.style.opacity = '0.5'
-      overlay.style.display = 'block'
-    } else {
-      overlay.style.opacity = '0'
-      overlay.style.display = 'none'
-    }
-  }, [mobileOpen])
+  
+    const trayRef = useRef<HTMLDivElement>(null)
+    const overlayRef = useRef<HTMLDivElement>(null)
+  
+    useEffect(() => {
+      const overlay = overlayRef.current
+      if (!overlay) return
+  
+      // Show/Hide overlay on mobile menu open/close
+      if (mobileOpen) {
+        overlay.style.opacity = '0.5'
+        overlay.style.display = 'block'
+      } else {
+        overlay.style.opacity = '0'
+        overlay.style.display = 'none'
+      }
+    }, [mobileOpen])
   return (
     <div>
       <header
@@ -100,10 +100,9 @@ const About = () => {
           </ul>
         </div>
       </header>
-      <Amain />
-      <AboutText/>
+      <Testimonial/>
     </div>
   )
 }
 
-export default About
+export default Page

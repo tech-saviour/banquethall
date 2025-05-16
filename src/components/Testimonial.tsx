@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -33,8 +33,6 @@ const testimonials: TestimonialType[] = [
       'My sister’s sangeet night turned out to be unforgettable. The décor and hospitality were praised by every single guest.',
     image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/v1747411120/testimonial_3_ngfpko.png',
   },
-
-
 ];
 
 const Testimonial = () => {
@@ -44,11 +42,17 @@ const Testimonial = () => {
   const next = () => setCurrent((prev) => (prev + 1) % testimonials.length);
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 6000); 
+
+    return () => clearInterval(interval); 
+  }, []);
+
   return (
     <section className="bg-[#F8F1E9] text-[#393b39] pt-24 px-4">
-      <h2 className="text-4xl sm:text-5xl font-serif text-center  tracking-widest">
-        Testimonials
-      </h2>
+      <h2 className="text-4xl sm:text-5xl font-serif text-center tracking-widest">Testimonials</h2>
 
       <div className="flex justify-center">
         <Image
@@ -59,9 +63,9 @@ const Testimonial = () => {
           className="w-72 sm:w-96 h-auto"
         />
       </div>
+
       <div className="max-w-6xl z-20 mx-auto flex flex-col lg:flex-row items-center justify-between relative gap-10">
-        {/* Decorative Line */}
-        <div className="hidden md:block md:absolute top-8 left-4 w-[50vw]  h-[60vh] border-t-2 border-l-2 border-r-2 border-black rotate-[3deg] z-0" />
+        <div className="hidden md:block md:absolute top-8 left-4 w-[50vw] h-[60vh] border-t-2 border-l-2 border-r-2 border-black rotate-[3deg] z-0" />
 
         {/* Quote Block */}
         <motion.div
@@ -74,14 +78,12 @@ const Testimonial = () => {
           <p className="text-base lg:text-xl font-serif text-black leading-relaxed px-6">
             <span className="flex justify-end text-5xl sm:text-8xl">“</span>
             {t.quote}
-           <span className="text-5xl sm:text-8xl lg:w-3/5 flex justify-start  ">”</span>
+            <span className="text-5xl sm:text-8xl lg:w-3/5 flex justify-start">”</span>
           </p>
-           
-          <div className="md:flex md:justify-center hidden   items-center  z-70  gap-6 ">
+
+          <div className="md:flex md:justify-center hidden items-center z-70 gap-6">
             <button onClick={prev} className="text-black text-2xl hover:text-gray-700">{'<'}</button>
-            <div className="flex items-center gap-2 text-sm text-black font-semibold">
-              Testimonial
-            </div>
+            <div className="flex items-center gap-2 text-sm text-black font-semibold">Testimonial</div>
             <button onClick={next} className="text-black text-2xl hover:text-gray-700">{'>'}</button>
           </div>
         </motion.div>
@@ -104,28 +106,23 @@ const Testimonial = () => {
             />
           </div>
 
-          <div className="flex justify-center md:hidden   items-center  z-70  gap-4 ">
+          <div className="flex justify-center md:hidden items-center z-70 gap-4">
             <button onClick={prev} className="text-black text-2xl hover:text-gray-700">{'<'}</button>
-            <div className="flex items-center gap-2 text-sm text-black font-semibold">
-              Testimonial
-            </div>
+            <div className="flex items-center gap-2 text-sm text-black font-semibold">Testimonial</div>
             <button onClick={next} className="text-black text-2xl hover:text-gray-700">{'>'}</button>
           </div>
-
         </motion.div>
-        <div className='flex flex-col text-center -mt-10 md:w-1/3  md:mt-6'>
+
+        <div className="flex flex-col text-center -mt-10 md:w-1/3 md:mt-6">
           <h3 className="mt-6 text-lg lg:text-xl font-semibold text-black">{t.name}</h3>
           <p className="text-gray-600 text-sm">{t.title}</p>
         </div>
       </div>
-
-
-      {/* Navigation */}
-
     </section>
   );
 };
 
 export default Testimonial;
+
 
 

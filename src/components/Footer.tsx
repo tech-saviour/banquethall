@@ -33,11 +33,18 @@ export default function Footer() {
           <h2 className="text-3xl sm:text-4xl font-serif tracking-[0.3em]">
             BANQUET HALLS
           </h2>
-          <div className="flex justify-center items-center gap-2 text-sm font-light italic">
-            <div className="w-20 sm:w-24 border-t border-[#3c2b1c]" />
-            <span className="font-petemoss text-xl">New Delhi</span>
-            <div className="w-20 sm:w-24 border-t border-[#3c2b1c]" />
-          </div>
+          <div className='flex items-center gap-1 sm:gap-2  justify-center text-center  text-sm'>
+          <div className="w-30 sm:w-40 border-t border-[#000]" />
+          <p> ★</p>
+          <p
+            className="text-2xl text-center italic"
+            style={{ fontFamily: "'Petemoss', cursive" }}
+          >
+            New Delhi
+          </p>
+          <p> ★</p>
+          <div className="w-30 sm:w-40 border-t border-[#000]" />
+        </div>
         </motion.div>
 
         {/* Contact + Social Info */}

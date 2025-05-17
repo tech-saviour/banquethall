@@ -1,65 +1,120 @@
+import { FC } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FC } from 'react';
 
 const AboutText: FC = () => {
   return (
-    <>
-
-      <div className="max-w-screen-xl mx-auto px-4 py-8">
+    <section className="bg-[#f8f1e9] text-[#393b39]  h-[60vh] md:h-[90vh] py-16 px-4">
+      <div className="max-w-6xl mx-auto relative">
+        {/* Top-left circular image */}
         <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          className="absolute hidden md:block -top-30 left-40 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-black shadow-md"
         >
-          <h1 className="text-4xl font-extrabold text-gray-800">Simply Pretty Banquet Halls</h1>
-          <p className="text-lg text-gray-500 mt-4">Explore beautiful banquet halls in New Delhi.</p>
+          <Image
+            src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+            alt="Top Circular"
+            width={112}
+            height={112}
+            className="w-full h-full object-cover"
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+        {/* Main content block */}
+        <div className="flex mt-20 flex-col items-center text-center px-4">
+          <motion.h2
+            className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.35em] mb-2"
+            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            SIMPLY PRETTY
+          </motion.h2>
+          <motion.h1
+            className="text-2xl sm:text-5xl font-bold tracking-[0.28em] mb-4"
+            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
           >
-            <Image src="/images/banquet1.jpg" alt="Banquet Hall 1" width={300} height={200} className="rounded-lg shadow-lg"/>
-          </motion.div>
+            BANQUET HALLS
+          </motion.h1>
 
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.4 }}
-          >
-            <Image src="/images/banquet2.jpg" alt="Banquet Hall 2" width={300} height={200} className="rounded-lg shadow-lg"/>
-          </motion.div>
-
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.6 }}
-          >
-            <Image src="/images/banquet3.jpg" alt="Banquet Hall 3" width={300} height={200} className="rounded-lg shadow-lg"/>
-          </motion.div>
+          {/* Decorative Line + Location */}
+          <div className="flex items-center justify-center gap-2 mb-6 text-sm sm:text-base">
+            <div className="w-20 border-t border-[#000]" />
+            <p>★</p>
+            <p
+              className="text-xl italic"
+              style={{ fontFamily: "'Petemoss', cursive" }}
+            >
+              New Delhi
+            </p>
+            <p>★</p>
+            <div className="w-20 border-t border-[#000]" />
+          </div>
         </div>
 
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <p className="text-lg text-gray-700">
-            Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque in accumsan pretium molestie
-            diam viverra adipiscing. Nulla aliquam est imperdiet libero.
-          </p>
-        </motion.div>
+        {/* Main content section with left and right images */}
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+          {/* Left rounded image */}
+          <motion.div
+            className="rounded-[2rem] border-black border-2 overflow-hidden hidden md:block"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2 }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+              alt="Left"
+              width={300}
+              height={220}
+              className="w-full  h-auto object-cover"
+            />
+          </motion.div>
+          {/* Text column */}
+          <div className="text-justify col-span-3 px-2">
+            <motion.p
+              className="text-gray-800 text-sm sm:text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.4 }}
+            >
+              Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque in accumsan pretium molestie diam viverra adipiscing. Nulla aliquam est imperdiet libero.
+            </motion.p>
+            <motion.p
+              className="mt-4 text-gray-800 text-sm sm:text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.6 }}
+            >
+              Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque in accumsan pretium molestie diam viverra adipiscing. Nulla aliquam est imperdiet libero. Scan this excel sheet and make a new excel sheet with columns for headquarter.
+            </motion.p>
+          </div>
+
+          {/* Right rounded image */}
+          <motion.div
+            className="rounded-[2rem] mt-20 border-black border-2 overflow-hidden hidden md:block"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2 }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+              alt="Right"
+              width={300}
+              height={220}
+              className="w-full h-auto bject-cover"
+            />
+          </motion.div>
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
 export default AboutText;
+

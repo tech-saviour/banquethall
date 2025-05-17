@@ -41,7 +41,7 @@ export default function ServiceBlock({
   return (
     <div
       ref={ref}
-      className={`flex flex-col text-[#393b39] md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} w-full`}
+      className={`flex overflow-hidden flex-col text-[#393b39] md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} w-full`}
     >
       {/* Image Section */}
       <motion.div
@@ -69,14 +69,14 @@ export default function ServiceBlock({
         variants={textVariant}
         initial="hidden"
         animate={controls}
-        className="w-full md:w-1/2 flex text-justify items-center justify-center px-6 py-10 bg-[#F8F1E9]"
+        className="w-full md:w-1/2  flex text-justify items-center justify-center px-6 py-10 bg-[#F8F1E9]"
       >
         <div className="max-w-md">
           <h3 className="text-4xl md:text-5xl tracking-widest text-center font-semibold  mb-4">
             {title}
           </h3>
-          <p className=" text-sm md:text-base mb-2">{description}</p>
-          <button className="border border-gray-700 px-6 py-2 rounded-md text-gray-700 hover:bg-gray-700 hover:cursor-pointer hover:text-white hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out">
+          <p className="font-sans text-sm md:text-lg mb-2">{description}</p>
+          <button className="border font-sans border-gray-700 px-6 py-2 rounded-md text-gray-700 hover:bg-gray-700 hover:cursor-pointer hover:text-white hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out">
             Book Now
           </button>
 

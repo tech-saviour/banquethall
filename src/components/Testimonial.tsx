@@ -54,7 +54,7 @@ const Testimonial = () => {
     <section className="bg-[#F8F1E9] text-[#393b39] pt-24 px-4">
       <h2 className="text-4xl sm:text-5xl font-serif text-center tracking-widest">Testimonials</h2>
 
-      <div className="flex justify-center">
+      <div className="flex font-sans justify-center">
         <Image
           src="/vector.png"
           alt="Decoration"
@@ -118,6 +118,7 @@ const Testimonial = () => {
           <p className="text-gray-600 text-sm">{t.title}</p>
         </div>
       </div>
+
     </section>
   );
 };

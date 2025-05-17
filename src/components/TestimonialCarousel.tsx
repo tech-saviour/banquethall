@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
+
 const testimonials = [
   {
     name: "Sohan Sharma",
@@ -112,7 +113,7 @@ export default function TestimonialCarousel() {
         Testimonials
       </h2>
 
-      <div className="flex justify-center">
+      <div className="flex font-sans justify-center">
         <Image
           src="/vector.png"
           alt="Decoration"
@@ -123,7 +124,7 @@ export default function TestimonialCarousel() {
       </div>
 
       {/* Image carousel */}
-      <div className="absolute justify-end flex top-28 left-1/2 transform -translate-x-1/2 w-[900px] h-[400px] overflow-hidden">
+      <div className="absolute font-sans justify-end flex top-28 left-1/2 transform -translate-x-1/2 w-[900px] h-[400px] overflow-hidden">
         <motion.div animate={controls} className="flex gap-4 items-end w-fit">
           {visibleTestimonials.map((testimonial, i) => {
             const isCenter = i === 2;
@@ -140,7 +141,7 @@ export default function TestimonialCarousel() {
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
-                    className="object-cover rounded-md shadow-md"
+                    className="object-cover font-sans rounded-md shadow-md"
                   />
                 </motion.div>
               );
@@ -175,8 +176,8 @@ export default function TestimonialCarousel() {
           transition={{ duration: 0.6 }}
           className="hidden sm:block absolute top-32 right-4 sm:right-10 w-[90%] sm:w-[50%] md:w-[35%] bg-[#FFFDF1] p-4 sm:p-6 rounded-md shadow-md backdrop-blur-sm"
         >
-          <h3 className="text-lg sm:text-xl font-semibold">{visibleTestimonials[1].name}</h3>
-          <p className="text-sm mt-2">{visibleTestimonials[1].text}</p>
+          <h3 className="text-lg font-sans sm:text-xl font-semibold">{visibleTestimonials[1].name}</h3>
+          <p className="text-sm font-sans mt-2">{visibleTestimonials[1].text}</p>
         </motion.div>
       </AnimatePresence>
 

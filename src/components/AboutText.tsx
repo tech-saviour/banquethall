@@ -6,15 +6,53 @@ const AboutText: FC = () => {
   return (
     <section className="bg-[#f8f1e9] text-[#393b39]  h-[60vh] md:h-[90vh] py-16 px-4">
       <div className="max-w-6xl mx-auto relative">
+        {/* Decorative Ellipses */}
+        <div className="block">
+          {/* Left Ellipse */}
+          <motion.div
+          className="absolute -top-10 md:top-[10%] md:-left-40 w-12 h-12 border-2 border-dashed border-black rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        />
+          <div className="absolute -top-10 md:top-[10%] md:-left-40 w-12 h-12 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
+
+          {/* Right Ellipses */}
+          <motion.div
+          className="absolute top-[20%] right-0 md:-right-10 w-12 h-12 md:w-24 md:h-24 border-2 border-dashed border-black rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        />
+          <div className="block absolute top-[20%] right-0 md:-right-10 w-12 h-12  md:w-24 md:h-24 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
+          <motion.div
+          className="hidden md:block absolute top-[60%] -right-24 w-36 h-36 border-2 border-dashed border-black rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        />
+          <div className="hidden md:block absolute top-[60%] -right-24 w-36 h-36 bg-[#d6c8b8] rounded-full opacity-60 z-0" />
+        </div>
+
+        {/* Background circular image */}
+        <motion.div
+          className="hidden md:block md:absolute -top-20 w-[70vw] h-[70vh] border-2 rounded-full border-black z-0"
+          animate={{ rotate: [-5, 5] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 15,
+            ease: "easeInOut",
+          }}
+        />
+
+
         {/* Top-left circular image */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute hidden md:block -top-30 left-40 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-black shadow-md"
+          className="absolute hidden md:block -top-30 left-40 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black shadow-md"
         >
           <Image
-            src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+            src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
             alt="Top Circular"
             width={112}
             height={112}
@@ -23,7 +61,7 @@ const AboutText: FC = () => {
         </motion.div>
 
         {/* Main content block */}
-        <div className="flex mt-20 flex-col items-center text-center px-4">
+        <div className="flex relative z-50 mt-10 md:mt-20 flex-col items-center text-center px-4">
           <motion.h2
             className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.35em] mb-2"
             style={{ fontFamily: "'Noto Serif JP', serif" }}
@@ -59,31 +97,31 @@ const AboutText: FC = () => {
         </div>
 
         {/* Main content section with left and right images */}
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+        <div className="mt-4 relative z-50 grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
           {/* Left rounded image */}
           <motion.div
-            className="rounded-[2rem] border-black border-2 overflow-hidden hidden md:block"
+            className=" rounded-[2rem] border-black border-2 overflow-hidden hidden md:block"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460078/slide1_omexsq.png"
               alt="Left"
               width={300}
               height={220}
-              className="w-full  h-auto object-cover"
+              className="w-full z-10  h-auto object-cover"
             />
           </motion.div>
           {/* Text column */}
-          <div className="text-justify col-span-3 px-2">
+          <div className="font-sans text-justify col-span-3 px-2">
             <motion.p
               className="text-gray-800 text-sm sm:text-base"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.4 }}
             >
-              Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque in accumsan pretium molestie diam viverra adipiscing. Nulla aliquam est imperdiet libero.
+              Banquet halls have large  spaces designed for hosting events, gatherings, and celebrations. They are often equipped with amenities such as seating arrangements, audiovisual equipment, and catering facilities to accommodate various functions like weddings, conferences, parties, and banquets.
             </motion.p>
             <motion.p
               className="mt-4 text-gray-800 text-sm sm:text-base"
@@ -91,19 +129,19 @@ const AboutText: FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.6 }}
             >
-              Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque in accumsan pretium molestie diam viverra adipiscing. Nulla aliquam est imperdiet libero. Scan this excel sheet and make a new excel sheet with columns for headquarter.
+              Banquet halls are designed to provide a luxurious and comfortable environment for guests. They often feature elegant decor, spacious layouts, and state-of-the-art facilities to ensure a memorable experience. .
             </motion.p>
           </div>
 
           {/* Right rounded image */}
           <motion.div
-            className="rounded-[2rem] mt-20 border-black border-2 overflow-hidden hidden md:block"
+            className="rounded-[2rem] mt-20 relative z-20 border-black border-2 overflow-hidden hidden md:block"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png"
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460079/abouttt_pq6i1u.jpg"
               alt="Right"
               width={300}
               height={220}

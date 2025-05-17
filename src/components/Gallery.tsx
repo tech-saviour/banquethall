@@ -100,11 +100,11 @@ export default function GallerySection() {
         </div>
       </div>
 
-      <p className="  mt-20 sm:mt-0 sm:text-xl text-sm">Visit the gallery for more such memory</p>
+      <p className=" font-sans mt-20 sm:mt-0 sm:text-xl text-sm">Visit the gallery for more such memory</p>
 
       <Link
         href="/gallery"
-        className="inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+        className="font-sans inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
       >
         Gallery
       </Link>

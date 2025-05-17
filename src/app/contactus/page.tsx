@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function ContactUs() {
   return (
     <section
-      className="relative w-full h-[80vh] sm:min-h-screen bg-cover bg-top flex items-center justify-center p-4"
+      className="relative font-serif w-full h-[80vh] sm:min-h-screen bg-cover bg-top flex items-center justify-center p-4"
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/dtswx9pbk/image/upload/v1746612024/contact_vfjxbe.jpg')",
@@ -88,7 +88,7 @@ export default function ContactUs() {
             <motion.button
               type="submit"
               whileTap={{ scale: 0.95 }}
-              className="mt-2 self-start  border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
+              className="mt-2 self-start hover:cursor-pointer  border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
             >
               Submit
             </motion.button>

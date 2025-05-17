@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -102,7 +103,7 @@ export default function EventSlider() {
                   <h2 className="text-white uppercase text-xl sm:text-5xl lg:text-6xl font-serif tracking-[0.2em] drop-shadow-lg leading-tight">
                     {item.text.includes("&") ? (
                       <>
-                      <div className="text-2xl sm:text-5xl tracking-[0.2em] leading-loose">
+                      <div className="text-2xl sm:text-5xl tracking-[0.2em] leading-tight">
 
                         EVENTS & <br /> SERVICES
                       </div>
@@ -112,9 +113,11 @@ export default function EventSlider() {
                     )}
                   </h2>
                   {currentSlide.type === "single" && (
-                    <button className="mt-4 px-8 py-2 border border-white text-white rounded-md text-base font-medium hover:bg-white hover:text-black transition duration-300">
+                    <Link
+                     href="/services"
+                     className="mt-4 px-8 py-2 border border-white text-white rounded-md text-base font-medium hover:bg-white hover:text-black transition duration-300">
                       Events
-                    </button>
+                    </Link>
                   )}
                 </motion.div>
               </div>

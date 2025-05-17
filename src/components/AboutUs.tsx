@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
     return (
@@ -79,9 +80,12 @@ export default function AboutUs() {
                             With exquisite decor, gourmet catering options, and customizable setups, we transform your vision into reality. Discover the perfect backdrop for your special moments—crafted with care and designed to impress.
                         </p>
                         <div className="flex justify-center sm:justify-start ">
-                            <button className="px-6 text-xl tracking-widest py-2 sm:px-8 sm:py-3 bg-transparent border border-gray-700 text-gray-800  rounded-lg hover:bg-gray-800 hover:text-white hover:cursor-pointer transition-all duration-300 ease-in-out shadow-md hover:shadow-lg">
-                                ABOUT US
-                            </button>
+                            <Link
+                                href="/about"
+                                className="font-sans inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+                            >
+                                About Us
+                            </Link>
                         </div>
                     </div>
                 </div>

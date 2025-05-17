@@ -35,7 +35,7 @@ const About = () => {
   return (
     <div>
       <header
-        className='fixed inset-x-0 top-0 z-50 transition-colors duration-300  bg-neutral-900/90 shadow-md'
+        className='fixed inset-x-0 top-0 z-60 transition-colors duration-300  bg-neutral-900/90 shadow-md'
       >
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between  px-4 py-3 text-white"

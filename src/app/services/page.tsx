@@ -136,10 +136,8 @@ const ServicesSection = () => {
 
                 {/* Overlay Text */}
                 <motion.div
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9, ease: 'easeOut' }}
-                    viewport={{ once: true }}
+                   
+                    
                     className="absolute z-10 inset-0 flex flex-col items-center justify-center text-center px-4 text-white"
                 >
                     <p className="text-sm md:text-3xl tracking-widest mb-2">

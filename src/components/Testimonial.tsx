@@ -51,7 +51,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className="bg-[#F8F1E9] text-[#393b39] pt-24 px-4">
+    <section className="bg-[#F8F1E9] overflow-hidden text-[#393b39] pt-24 px-4">
       <h2 className="text-4xl sm:text-5xl font-serif text-center tracking-widest">Testimonials</h2>
 
       <div className="flex font-sans justify-center">

@@ -31,11 +31,11 @@ export default function ContactUs() {
           {[{
             Icon: MapPin,
             title: "Our main Office",
-            content: <> Delhi<br />Rohini</>
+            content: <> Connaught Place<br />New Delhi</>
           }, {
             Icon: Phone,
             title: "Phone number",
-            content: <>+91 93********<br />+91 78********</>
+            content: <>+91 93255-12345<br />+91 78897-12345</>
           }, {
             Icon: Mail,
             title: "E-mail",
@@ -80,7 +80,7 @@ export default function ContactUs() {
               whileFocus={{ scale: 1.02 }}
             />
             <motion.textarea
-              placeholder="Write your query here we are here to listen you"
+              placeholder="Write your query here"
               rows={3}
               className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}

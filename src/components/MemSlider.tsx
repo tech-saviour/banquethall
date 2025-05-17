@@ -48,14 +48,14 @@ const MemSlider = () => {
         >
           {/* Duplicating images array to simulate infinite scroll */}
           {[...images, ...images].map((image, index) => (
-            <div key={index} className="flex-shrink-0  w-1/3 md:w-1/5 lg:w-1/5">
+            <div key={index} className="flex-shrink-0  w-1/2 md:w-1/5 lg:w-1/5">
               <Image
                 src={image.src}
                 alt={image.alt || `slider-image-${index}`}
                 width={400} // Set a width for the image
                 height={300} // Set a height for the image
                 style={{ objectFit: 'cover' }} // Replace layout prop
-                className='h-56 sm:h-full '
+                className='h-full '
               />
             </div>
           ))}

@@ -33,7 +33,7 @@ export default function AboutUs() {
                                 blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460075/about-1_jqo7oy.jpg"
                             />
                         </div>
-                        <div className="relative w-full h-24 sm:h-48">
+                        <div className="relative w-full h-36 sm:h-48">
                             <Image
                                 src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460067/about-2_cfiwoe.jpg"
                                 alt="Dining table"
@@ -57,16 +57,16 @@ export default function AboutUs() {
                                 blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
                             />
                         </div>
-                        <div className="row-span-1 relative w-full h-24 sm:h-48">
+                        <div className="row-span-1 relative w-full h-36 sm:h-48">
                             <Image
-                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460071/about-4_tjhk99.jpg"
+                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
                                 alt="Event hall"
                                 fill
                                 className="object-cover rounded shadow-md"
                                 placeholder="blur"
                                 loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 25vw"
-                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460071/about-4_tjhk99.jpg"
+                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
                             />
                         </div>
                     </div>

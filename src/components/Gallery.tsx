@@ -53,10 +53,10 @@ export default function GallerySection() {
 
   return (
     <section className="relative bg-[#F8F1E9] text-[#393b39] flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-4xl  sm:text-6xl pt-8 sm:pt-12 font-serif text-center tracking-widest">
+      <h2 className="text-4xl  sm:text-6xl pt-12 font-serif text-center tracking-widest">
         Gallery
       </h2>
-      <div className="flex mb-16 sm:mb-0 justify-center">
+      <div className="flex mb-24 sm:mb-0 justify-center">
         <div className="">
           <Image
             src="/vector.png"
@@ -80,7 +80,7 @@ export default function GallerySection() {
             return (
               <motion.div
                 key={i}
-                className="absolute rounded-xl shadow-xl overflow-hidden w-[200px] h-[40vh] sm:w-[220px] sm:h-2/6 md:w-[500px] md:h-5/6"
+                className="absolute rounded-xl shadow-xl overflow-hidden w-[320px] h-[40vh] sm:w-[220px] sm:h-2/6 md:w-[500px] md:h-5/6"
                 animate={{ x: translateX, scale, opacity }}
                 initial={false}
                 transition={{ duration: 0.7, ease: 'easeInOut' }}
@@ -100,13 +100,13 @@ export default function GallerySection() {
         </div>
       </div>
 
-      <p className=" font-sans mt-20 sm:mt-0 sm:text-xl text-sm">Visit the gallery for more such memory</p>
+      <p className=" font-sans mt-32 sm:mt-0 sm:text-xl text-sm">Visit the gallery for more such memory</p>
 
       <Link
         href="/gallery"
         className="font-sans inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
       >
-        Gallery
+        See More
       </Link>
     </section>
   );

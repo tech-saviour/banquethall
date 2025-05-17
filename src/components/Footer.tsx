@@ -56,7 +56,7 @@ export default function Footer() {
         >
           <div className="flex items-center gap-2">
             <MapPin size={16} />
-            <span>ABC Street, Vice City, Leonida, United States of Palermo</span>
+            <span>Connaught Place,New Delhi</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone size={16} />

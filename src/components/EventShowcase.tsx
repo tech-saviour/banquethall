@@ -66,10 +66,9 @@ export default function EventSlider() {
       setMobileIndex((prev) => (prev + 1) % flatImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  });
 
 
-  const currentSlide = slides[current];
 
   return (
     <div className="w-full h-[60vh] sm:h-[70vh] md:h-[85vh] relative overflow-hidden rounded-xl">

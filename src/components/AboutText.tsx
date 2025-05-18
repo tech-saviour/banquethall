@@ -38,7 +38,7 @@ const AboutText: FC = () => {
           transition={{
             repeat: Infinity,
             repeatType: "reverse",
-            duration: 15,
+            duration: 7,
             ease: "easeInOut",
           }}
         />

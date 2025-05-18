@@ -10,7 +10,7 @@ export default function Gphoto() {
         backgroundPosition: 'bottom',
         backgroundSize: 'cover',
         backgroundPositionY: '0%',
-        backgroundPositionX: '45%',
+        backgroundPositionX: '20%',
       }}>
         <div className="absolute inset-0 z-5 h-[80vh] sm:h-[85vh] md:h-[100vh]  bg-black/45" />
         </section>

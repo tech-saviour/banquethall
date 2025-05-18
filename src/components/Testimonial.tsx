@@ -30,7 +30,7 @@ const testimonials: TestimonialType[] = [
     name: 'Sunita Bansal',
     title: 'Sister of the Bride',
     quote:
-      'My sister’s sangeet night turned out to be unforgettable. The décor and hospitality were praised by every single guest.',
+      'My sister’s sangeet night turned out to be unforgettable. The hospitality was praised by every single guest.',
     image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/v1747411120/testimonial_3_ngfpko.png',
   },
 ];
@@ -76,9 +76,9 @@ const Testimonial = () => {
           className="w-full lg:w-3/5 text-center lg:text-left z-20"
         >
           <p className="text-base lg:text-xl font-serif text-black leading-relaxed px-6">
-            <span className="flex justify-end text-5xl sm:text-8xl">“</span>
+            <span className="flex justify-start text-5xl sm:text-8xl">“</span>
             {t.quote}
-            <span className="text-5xl sm:text-8xl lg:w-3/5 flex justify-start">”</span>
+            <span className="text-5xl sm:text-8xl lg:w-3/5 flex justify-end">”</span>
           </p>
 
           <div className="md:flex md:justify-center hidden items-center z-70 gap-6">

@@ -82,9 +82,9 @@ export default function AboutUs() {
                         <div className="flex justify-center sm:justify-start ">
                             <Link
                                 href="/about"
-                                className="font-sans inline-block mt-4 mb-16 px-6 py-2 border border-gray-700  text-xl sm:text-2xl rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+                                className="font-sans text-gray-700 inline-block mt-4 mb-16 px-6 py-2 border-2 border-gray-700  text-xl sm:text-2xl rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
                             >
-                                About Us
+                                About Us 
                             </Link>
                         </div>
                     </div>

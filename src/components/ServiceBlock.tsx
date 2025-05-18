@@ -71,12 +71,12 @@ export default function ServiceBlock({
         animate={controls}
         className="w-full md:w-1/2  flex text-justify items-center justify-center px-6 py-10 bg-[#F8F1E9]"
       >
-        <div className="max-w-md">
+        <div className="max-w-md flex-wrap justify-center items-center text-center">
           <h3 className="text-4xl md:text-5xl tracking-widest text-center font-semibold  mb-4">
             {title}
           </h3>
-          <p className="font-sans text-sm md:text-lg mb-2">{description}</p>
-          <button className="border font-sans border-gray-700 px-6 py-2 rounded-md text-gray-700 hover:bg-gray-700 hover:cursor-pointer hover:text-white hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out">
+          <p className="font-sans text-justify text-sm md:text-lg mb-2">{description}</p>
+          <button className="border  font-sans border-gray-700 px-6 py-2 rounded-md text-gray-700  hover:cursor-pointer  hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out">
             Book Now
           </button>
 

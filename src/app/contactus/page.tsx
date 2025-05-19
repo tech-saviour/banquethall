@@ -1,10 +1,78 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 export default function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [query, setQuery] = useState('');
+
+  
+  interface Status {
+    type: 'loading' | 'error' | 'success';
+    message: string;
+  }
+
+  const [status, setStatus] = useState<Status | null>(null); 
+
+  interface SendEmailResponse {
+    message: string;
+  }
+
+  interface EmailValidator {
+    (email: string): boolean;
+  }
+
+  const isValidEmail: EmailValidator = (email: string): boolean => {
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus(null);
+    if (!name || !email || !query) {
+      setStatus({ type: 'error', message: 'Please fill in all fields' });
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setStatus({ type: 'error', message: 'Please enter a valid email address' });
+      return;
+    }
+
+    setStatus({ type: 'loading', message: 'Sending email...' });
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, query }),
+      });
+
+      const result: SendEmailResponse = await response.json();
+
+      if (response.status === 200) {
+        setStatus({ type: 'success', message: 'Email sent successfully!' });
+        setName('');
+        setEmail('');
+        setQuery('');
+      } else if (response.status === 429) {
+        setStatus({ type: 'error', message: result.message }); 
+      } else {
+        setStatus({ type: 'error', message: 'Failed to send email. Please try again later.' });
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setStatus({ type: 'error', message: 'An unexpected error occurred.' });
+    }
+  };
+
   return (
     <section
       className="relative font-serif w-full h-[80vh] sm:min-h-screen bg-cover bg-top flex items-center justify-center p-4"
@@ -27,7 +95,6 @@ export default function ContactUs() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center lg:items-start gap-4 w-full sm:w-auto"
         >
-          {/* Info Cards */}
           {[{
             Icon: MapPin,
             title: "Our main Office",
@@ -56,7 +123,7 @@ export default function ContactUs() {
           ))}
         </motion.div>
 
-        {/* Contact Form */}
+        {/* Form */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -66,32 +133,45 @@ export default function ContactUs() {
           <h2 className="text-2xl sm:text-5xl font-serif mb-6 border-b-2 border-white pb-2 text-center ">
             CONTACT US
           </h2>
-          <form className="flex flex-col gap-4">
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <motion.input
               type="text"
               placeholder="Enter your name"
-              className=" p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.input
               type="email"
               placeholder="Enter your valid Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.textarea
               placeholder="Write your query here"
               rows={3}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               className="p-2 sm:p-3 rounded-md text-black bg-white/80 focus:outline-none"
               whileFocus={{ scale: 1.02 }}
             />
             <motion.button
               type="submit"
               whileTap={{ scale: 0.95 }}
-              className="mt-2 self-start hover:cursor-pointer  border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
+              className="mt-2 self-start hover:cursor-pointer border border-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition"
             >
               Submit
             </motion.button>
+
+            {status && (
+              <div className={`mt-4 text-center ${status.type === 'error' ? 'text-red-500' : 'text-white'}`}>
+                {status.message}
+              </div>
+            )}
           </form>
         </motion.div>
       </div>

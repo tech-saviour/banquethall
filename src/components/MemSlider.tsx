@@ -52,9 +52,9 @@ const MemSlider = () => {
               <Image
                 src={image.src}
                 alt={image.alt || `slider-image-${index}`}
-                width={400} // Set a width for the image
-                height={300} // Set a height for the image
-                style={{ objectFit: 'cover' }} // Replace layout prop
+                width={400} 
+                height={300} 
+                style={{ objectFit: 'cover' }} 
                 className='h-full '
               />
             </div>

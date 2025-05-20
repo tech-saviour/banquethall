@@ -26,7 +26,6 @@ const ServicesSection = () => {
         const overlay = overlayRef.current
         if (!overlay) return
 
-        // Show/Hide overlay on mobile menu open/close
         if (mobileOpen) {
             overlay.style.opacity = '0.5'
             overlay.style.display = 'block'

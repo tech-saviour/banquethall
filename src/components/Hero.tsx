@@ -34,6 +34,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
+        whileHover={{ scale: 1.05 }}
       >
         <h2
           className="text-xl text-left sm:text-3xl md:text-4xl lg:text-6xl tracking-widest "

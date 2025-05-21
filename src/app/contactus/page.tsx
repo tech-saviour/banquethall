@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { toast, ToastContainer } from 'react-toastify';  
+import 'react-toastify/dist/ReactToastify.css';  
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -11,13 +13,11 @@ export default function ContactUs() {
   const [email, setEmail] = useState('');
   const [query, setQuery] = useState('');
 
-  
   interface Status {
     type: 'loading' | 'error' | 'success';
     message: string;
   }
-
-  const [status, setStatus] = useState<Status | null>(null); 
+  const [status, setStatus] = useState<Status | null>(null);
 
   interface SendEmailResponse {
     message: string;
@@ -34,17 +34,23 @@ export default function ContactUs() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus(null);
+
     if (!name || !email || !query) {
-      setStatus({ type: 'error', message: 'Please fill in all fields' });
+      const errorMsg = 'Please fill in all fields';
+      setStatus({ type: 'error', message: errorMsg });
+      toast.error(errorMsg);
       return;
     }
 
     if (!isValidEmail(email)) {
-      setStatus({ type: 'error', message: 'Please enter a valid email address' });
+      const errorMsg = 'Please enter a valid email address';
+      setStatus({ type: 'error', message: errorMsg });
+      toast.error(errorMsg);
       return;
     }
 
     setStatus({ type: 'loading', message: 'Sending email...' });
+    const loadingToastId = toast.loading('Sending email...', { autoClose: false });  // Show the loading toast
 
     try {
       const response = await fetch('/api/send-email', {
@@ -57,19 +63,31 @@ export default function ContactUs() {
 
       const result: SendEmailResponse = await response.json();
 
+      // Dismiss the loading toast
+      toast.dismiss(loadingToastId);
+
       if (response.status === 200) {
-        setStatus({ type: 'success', message: 'Email sent successfully!' });
+        const successMsg = 'Email sent successfully!';
+        setStatus({ type: 'success', message: successMsg });
+        toast.success(successMsg);
         setName('');
         setEmail('');
         setQuery('');
       } else if (response.status === 429) {
-        setStatus({ type: 'error', message: result.message }); 
+        setStatus({ type: 'error', message: result.message });
+        toast.error(result.message);
       } else {
-        setStatus({ type: 'error', message: 'Failed to send email. Please try again later.' });
+        const errorMsg = 'Failed to send email. Please try again later.';
+        setStatus({ type: 'error', message: errorMsg });
+        toast.error(errorMsg);
       }
     } catch (error) {
+      // Dismiss the loading toast
+      toast.dismiss(loadingToastId);
       console.error('Error sending email:', error);
-      setStatus({ type: 'error', message: 'An unexpected error occurred.' });
+      const errorMsg = 'An unexpected error occurred.';
+      setStatus({ type: 'error', message: errorMsg });
+      toast.error(errorMsg);
     }
   };
 
@@ -83,11 +101,14 @@ export default function ContactUs() {
         backgroundPositionX: '35%',
       }}
     >
+      {/* Include the ToastContainer component */}
+      <ToastContainer />
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-45 z-0" />
 
       {/* Contact Content */}
-      <div className="relative  mt-24 sm:mt-20 z-10 flex flex-col sm:flex-row w-full max-w-6xl text-white gap-8 items-center lg:items-start justify-center md:justify-between">
+      <div className="relative mt-24 sm:mt-20 z-10 flex flex-col sm:flex-row w-full max-w-6xl text-white gap-8 items-center lg:items-start justify-center md:justify-between">
         {/* Contact Info */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -95,26 +116,42 @@ export default function ContactUs() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center lg:items-start gap-4 w-full sm:w-auto"
         >
-          {[{
-            Icon: MapPin,
-            title: "Our main Office",
-            content: <> Connaught Place<br />New Delhi</>
-          }, {
-            Icon: Phone,
-            title: "Phone number",
-            content: <>+91 93255-12345<br />+91 78897-12345</>
-          }, {
-            Icon: Mail,
-            title: "E-mail",
-            content: <>preetybanquet@gmail.com</>
-          }].map(({ Icon, title, content }, index) => (
+          {[
+            {
+              Icon: MapPin,
+              title: 'Our main Office',
+              content: (
+                <>
+                  Connaught Place
+                  <br />
+                  New Delhi
+                </>
+              ),
+            },
+            {
+              Icon: Phone,
+              title: 'Phone number',
+              content: (
+                <>
+                  +91 93255-12345
+                  <br />
+                  +91 78897-12345
+                </>
+              ),
+            },
+            {
+              Icon: Mail,
+              title: 'E-mail',
+              content: <>preetybanquet@gmail.com</>,
+            },
+          ].map(({ Icon, title, content }, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
               className="bg-white/40 hidden sm:block p-6 backdrop-blur rounded-md w-full max-w-xs"
             >
               <div className="text-black text-sm sm:text-xl">
-                <h2 className=" font-bold mb-2 flex items-center gap-2">
+                <h2 className="font-bold mb-2 flex items-center gap-2">
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5" /> {title}
                 </h2>
                 <p>{content}</p>
@@ -130,7 +167,7 @@ export default function ContactUs() {
           transition={{ duration: 0.8 }}
           className="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-md w-full max-w-md"
         >
-          <h2 className="text-2xl sm:text-5xl font-serif mb-6 border-b-2 border-white pb-2 text-center ">
+          <h2 className="text-2xl sm:text-5xl font-serif mb-6 border-b-2 border-white pb-2 text-center">
             CONTACT US
           </h2>
 
@@ -168,8 +205,11 @@ export default function ContactUs() {
             </motion.button>
 
             {status && (
-              <div className={`mt-4 text-center ${status.type === 'error' ? 'text-red-500' : 'text-white'}`}>
-                {status.message}
+              <div
+                className={`mt-4 text-center ${
+                  status.type === 'error' ? 'text-red-500' : 'text-white'
+                }`}
+              >
               </div>
             )}
           </form>
@@ -178,5 +218,6 @@ export default function ContactUs() {
     </section>
   );
 }
+
 
 

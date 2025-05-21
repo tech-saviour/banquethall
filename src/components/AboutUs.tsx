@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 
 export default function AboutUs() {
     return (
@@ -13,10 +13,11 @@ export default function AboutUs() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
+
                 >
                     About Us
                 </motion.h2>
-                
+
                 <div className="flex justify-center mb-4">
                     <div className="-mt-4">
                         {/* Hover animation on the image */}
@@ -25,6 +26,7 @@ export default function AboutUs() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6 }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                            whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
                                 src="/vector.png"
@@ -46,6 +48,7 @@ export default function AboutUs() {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                            whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
                                 src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460075/about-1_jqo7oy.jpg"
@@ -64,6 +67,7 @@ export default function AboutUs() {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                            whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
                                 src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460067/about-2_cfiwoe.jpg"
@@ -82,6 +86,7 @@ export default function AboutUs() {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                            whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
                                 src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
@@ -100,6 +105,7 @@ export default function AboutUs() {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                            whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
                                 src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
@@ -120,7 +126,7 @@ export default function AboutUs() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6 }}
-                        
+
                     >
                         <p className="mb-6 text-base sm:text-lg sm:leading-relaxed">
                             Nestled in the heart of the city, our banquet halls offer a blend of timeless elegance and modern convenience. Whether you&apos;re planning a lavish wedding, an intimate celebration, or a corporate gathering, our versatile spaces and attentive service ensure your event is unforgettable.

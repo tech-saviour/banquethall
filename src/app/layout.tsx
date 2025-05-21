@@ -4,6 +4,8 @@ import './globals.css'
 import Footer from '@/components/Footer'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
+import { ToastContainer } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -22,6 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {/* Navbar is hidden on service pages */}
         {!isservicePage && <Navbar />}
+
+        <ToastContainer />
 
         {/* Animate Presence for page transitions */}
         <AnimatePresence mode="wait">

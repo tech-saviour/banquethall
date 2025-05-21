@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, Calendar, User, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 interface ServiceBlockProps {
   title: string;
@@ -61,10 +63,26 @@ export default function ServiceBlock({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validate()) {
-      console.log('Booking submitted', form);
-      setShowForm(false);
+      try {
+        const response = await fetch('/api/form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+        });
+
+        if (response.ok) {
+          toast.success('Your booking has been successfully submitted!');
+          setShowForm(false);
+        } else {
+          toast.error('Failed to submit the form. Please try again.');
+        }
+      } catch {
+        toast.error('An error occurred. Please try again.');
+      }
     }
   };
 
@@ -90,14 +108,11 @@ export default function ServiceBlock({
   };
 
   const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev); // Toggle dropdown state
+    setIsDropdownOpen((prev) => !prev); 
   };
 
   return (
-    <div
-      ref={ref}
-      className={`flex overflow-hidden flex-col text-[#393b39] md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} w-full relative`}
-    >
+    <div ref={ref} className={`flex overflow-hidden flex-col text-[#393b39] md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} w-full relative`}>
       {/* Image Section */}
       <motion.div
         variants={imageVariant}
@@ -119,10 +134,8 @@ export default function ServiceBlock({
         className="w-full md:w-1/2 flex text-justify items-center justify-center px-6 py-10 bg-[#F8F1E9]"
       >
         <div className="max-w-md text-center">
-          <h3 className="text-4xl md:text-5xl tracking-widest font-semibold mb-4">
-            {title}
-          </h3>
-          <p className="text-sm md:text-lg mb-2">{description}</p>
+          <h3 className="text-4xl md:text-5xl tracking-widest font-semibold mb-4">{title}</h3>
+          <p className="text-sm text-justify md:text-lg mb-2">{description}</p>
           <button
             onClick={() => setShowForm(true)}
             className="border border-gray-700 px-6 py-2 rounded-md text-gray-700 hover:cursor-pointer hover:shadow-md hover:scale-105 transition-all duration-300"
@@ -139,7 +152,7 @@ export default function ServiceBlock({
             <h2 className="text-2xl font-sans font-semibold mb-4 text-center">Book Your Spot</h2>
 
             <div className="space-y-3">
-              <div className="relative" onClick={toggleDropdown}> 
+              <div className="relative" onClick={toggleDropdown}>
                 <select
                   name="event"
                   value={form.event}
@@ -152,10 +165,7 @@ export default function ServiceBlock({
                   <option value="Concert">Concert</option>
                 </select>
                 {/* Chevron icon for dropdown */}
-                <div 
-                  className="absolute right-3 top-2.5 cursor-pointer"
-                  onClick={toggleDropdown}
-                >
+                <div className="absolute right-3 top-2.5 cursor-pointer" onClick={toggleDropdown}>
                   {isDropdownOpen ? <ChevronUp /> : <ChevronDown />}
                 </div>
                 {errors.event && <p className="text-sm text-red-600">{errors.event}</p>}
@@ -218,23 +228,17 @@ export default function ServiceBlock({
                   className="w-full outline-none"
                   value={form.date}
                   onChange={handleDateChange}
-                  min={new Date().toISOString().split('T')[0]} // Restrict to today or later
+                  min={new Date().toISOString().split('T')[0]} 
                 />
               </div>
               {errors.date && <p className="text-sm text-red-600">{errors.date}</p>}
             </div>
 
             <div className="flex justify-between mt-6">
-              <button
-                onClick={() => setShowForm(false)}
-                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-              >
+              <button onClick={() => setShowForm(false)} className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
                 Cancel
               </button>
-              <button
-                onClick={handleSubmit}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-              >
+              <button onClick={handleSubmit} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Submit
               </button>
             </div>

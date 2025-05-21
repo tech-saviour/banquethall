@@ -16,7 +16,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                    
                     <Image
@@ -35,7 +36,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151522/Rectangle_3_1_-min_xjtd05.png"
@@ -53,7 +55,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.6 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151518/Rectangle_4_1_-min_ubuxyk.png"
@@ -71,7 +74,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_5_2_-min_ckdkun.png"
@@ -89,7 +93,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_6_2_-min_jtgiiz.png"
@@ -107,7 +112,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
@@ -125,7 +131,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.4 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_7-min_vceryj.png"
@@ -143,7 +150,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.6 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_9-min_gzo9bq.png"
@@ -161,7 +169,8 @@ const PhotoGallery = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.8 }}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02 ,transition: { duration: 0.3 } } }
+                    whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
                         src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_10-min_qsiv3b.png"

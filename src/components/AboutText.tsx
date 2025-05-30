@@ -4,36 +4,36 @@ import Image from 'next/image';
 
 const AboutText: FC = () => {
   return (
-    <section className="bg-[#f8f1e9] text-[#393b39]  h-[60vh] md:h-[90vh] py-16 px-4">
+    <section className="bg-[#f8f1e9] text-[#393b39]  h-[80vh] md:h-[95vh] py-16 px-4">
       <div className="max-w-6xl mx-auto relative">
         {/* Decorative Ellipses */}
         <div className="block">
           {/* Left Ellipse */}
           <motion.div
-          className="absolute -top-10 md:top-[10%] md:-left-40 w-12 h-12 border-2 border-dashed border-black rounded-full"
+          className="absolute -top-10 md:top-[10%] md:left-20 w-12 h-12 border-2 border-dashed border-black rounded-full"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
         />
-          <div className="absolute -top-10 md:top-[10%] md:-left-40 w-12 h-12 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
+          <div className="absolute -top-10 md:top-[10%] md:left-20 w-12 h-12 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
 
           {/* Right Ellipses */}
           <motion.div
-          className="absolute top-[20%] right-0 md:-right-10 w-12 h-12 md:w-24 md:h-24 border-2 border-dashed border-black rounded-full"
+          className="absolute top-[0%] right-0 md:right-20 w-12 h-12 md:w-24 md:h-24 border-2 border-dashed border-black rounded-full"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
         />
-          <div className="block absolute top-[20%] right-0 md:-right-10 w-12 h-12  md:w-24 md:h-24 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
+          <div className="block absolute top-[0%] right-0 md:right-20 w-12 h-12  md:w-24 md:h-24 bg-[#e0d4c5] rounded-full opacity-70 z-0" />
           <motion.div
-          className="hidden md:block absolute top-[60%] -right-24 w-36 h-36 border-2 border-dashed border-black rounded-full"
+          className="hidden md:block absolute top-[40%] right-2 w-36 h-36 border-2 border-dashed border-black rounded-full"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
         />
-          <div className="hidden md:block absolute top-[60%] -right-24 w-36 h-36 bg-[#d6c8b8] rounded-full opacity-60 z-0" />
+          <div className="hidden md:block absolute top-[40%] right-2 w-36 h-36 bg-[#d6c8b8] rounded-full opacity-60 z-0" />
         </div>
 
         {/* Background circular image */}
         <motion.div
-          className="hidden md:block md:absolute -top-20 w-[70vw] h-[70vh] border-2 rounded-full border-black z-0"
+          className="hidden lg:block lg:absolute -top-20 w-[1000px] h-[500px] border-2 rounded-full border-black z-0"
           animate={{ rotate: [-5, 5] }}
           transition={{
             repeat: Infinity,

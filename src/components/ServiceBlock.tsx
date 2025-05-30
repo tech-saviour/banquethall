@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, Calendar, User, Users, ChevronDown, ChevronUp } from 'lucide-react';
-import { toast } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css'; 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface ServiceBlockProps {
   title: string;
@@ -108,7 +108,7 @@ export default function ServiceBlock({
   };
 
   const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev); 
+    setIsDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -159,9 +159,11 @@ export default function ServiceBlock({
                   onChange={handleChange}
                   className="w-full border p-2 rounded pr-10 appearance-none"
                 >
-                  <option value="">Select Event</option>
-                  <option value="Workshop">Workshop</option>
+                  <option value="" disabled>Select an event</option>
+                  <option value="Workshop">Marriage</option>
+                  <option value="Workshop">Engagement</option>
                   <option value="Seminar">Seminar</option>
+                  <option value="Workshop">Workshop</option>
                   <option value="Concert">Concert</option>
                 </select>
                 {/* Chevron icon for dropdown */}
@@ -170,7 +172,6 @@ export default function ServiceBlock({
                 </div>
                 {errors.event && <p className="text-sm text-red-600">{errors.event}</p>}
               </div>
-
               <div className="flex items-center border rounded p-2">
                 <User className="mr-2" />
                 <input
@@ -207,17 +208,30 @@ export default function ServiceBlock({
               </div>
               {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
 
-              <div className="flex items-center border rounded p-2">
-                <Users className="mr-2" />
-                <input
+              <div className="flex items-center border rounded p-2 relative">
+                 <Users className="mr-2" />
+                <select
                   name="people"
-                  type="number"
-                  placeholder="Number of People"
-                  className="w-full outline-none"
                   value={form.people}
                   onChange={handleChange}
-                />
+                  className="w-full p-2 rounded pr-10 appearance-none"
+                >
+                  <option value="" disabled>Select number of people</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                  <option value="300">300</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                  <option value="600">600</option>
+                  <option value="800">800</option>
+                </select>
+                {/* Chevron icon for dropdown */}
+                <div className="absolute right-3 top-2.5 cursor-pointer" onClick={toggleDropdown}>
+                  {isDropdownOpen ? <ChevronUp /> : <ChevronDown />}
+                </div>
+                {errors.people && <p className="text-sm text-red-600">{errors.people}</p>}
               </div>
+
               {errors.people && <p className="text-sm text-red-600">{errors.people}</p>}
 
               <div className="flex items-center border rounded p-2">
@@ -228,17 +242,17 @@ export default function ServiceBlock({
                   className="w-full outline-none"
                   value={form.date}
                   onChange={handleDateChange}
-                  min={new Date().toISOString().split('T')[0]} 
+                  min={new Date().toISOString().split('T')[0]}
                 />
               </div>
               {errors.date && <p className="text-sm text-red-600">{errors.date}</p>}
             </div>
 
             <div className="flex justify-between mt-6">
-              <button onClick={() => setShowForm(false)} className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+              <button onClick={() => setShowForm(false)} className="px-4 py-2 text-white hover:cursor-pointer bg-red-600 rounded hover:bg-red-700">
                 Cancel
               </button>
-              <button onClick={handleSubmit} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <button onClick={handleSubmit} className="px-4 py-2 hover:cursor-pointer bg-blue-600 text-white rounded hover:bg-blue-700">
                 Submit
               </button>
             </div>

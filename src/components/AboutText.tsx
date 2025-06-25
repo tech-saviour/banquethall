@@ -52,7 +52,7 @@ const AboutText: FC = () => {
           className="absolute hidden md:block -top-30 left-40 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black shadow-md"
         >
           <Image
-            src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
+            src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460070/about-3_kr1sau.jpg"
             alt="Top Circular"
             width={112}
             height={112}
@@ -106,7 +106,7 @@ const AboutText: FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460078/slide1_omexsq.png"
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460078/slide1_omexsq.png"
               alt="Left"
               width={300}
               height={220}
@@ -141,7 +141,7 @@ const AboutText: FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460079/abouttt_pq6i1u.jpg"
+              src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460079/abouttt_pq6i1u.jpg"
               alt="Right"
               width={300}
               height={220}

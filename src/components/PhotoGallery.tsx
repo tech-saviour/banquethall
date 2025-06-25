@@ -21,14 +21,14 @@ const PhotoGallery = () => {
                 >
                    
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151527/Rectangle_1_2_-min_rjshpo.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151527/Rectangle_1_2_-min_rjshpo.png"
                         alt="Banquet setup"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151527/Rectangle_1_2_-min_rjshpo.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151527/Rectangle_1_2_-min_rjshpo.png"
                     />
                 </motion.div>
                 <motion.div
@@ -40,14 +40,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151522/Rectangle_3_1_-min_xjtd05.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151522/Rectangle_3_1_-min_xjtd05.png"
                         alt="Dining table"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 25vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151522/Rectangle_3_1_-min_xjtd05.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151522/Rectangle_3_1_-min_xjtd05.png"
                     />
                 </motion.div>
                 <motion.div
@@ -59,14 +59,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151518/Rectangle_4_1_-min_ubuxyk.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151518/Rectangle_4_1_-min_ubuxyk.png"
                         alt="Wedding setup"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151518/Rectangle_4_1_-min_ubuxyk.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151518/Rectangle_4_1_-min_ubuxyk.png"
                     />
                 </motion.div>
                 <motion.div
@@ -78,14 +78,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_5_2_-min_ckdkun.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151515/Rectangle_5_2_-min_ckdkun.png"
                         alt="Event hall"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 25vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_5_2_-min_ckdkun.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151515/Rectangle_5_2_-min_ckdkun.png"
                     />
                 </motion.div>
                 <motion.div
@@ -97,14 +97,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_6_2_-min_jtgiiz.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151515/Rectangle_6_2_-min_jtgiiz.png"
                         alt="Banquet setup"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151515/Rectangle_6_2_-min_jtgiiz.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151515/Rectangle_6_2_-min_jtgiiz.png"
                     />
                 </motion.div>
                 <motion.div
@@ -116,14 +116,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_8-min_wxgd4j.png"
                         alt="Dining table"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 25vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_8-min_wxgd4j.png"
                     />
                 </motion.div>
                 <motion.div
@@ -135,14 +135,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_7-min_vceryj.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_7-min_vceryj.png"
                         alt="Wedding setup"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_7-min_vceryj.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_7-min_vceryj.png"
                     />
                 </motion.div>
                 <motion.div
@@ -154,14 +154,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_9-min_gzo9bq.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_9-min_gzo9bq.png"
                         alt="Event hall"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 25vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_9-min_gzo9bq.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_9-min_gzo9bq.png"
                     />
                 </motion.div>
                 <motion.div
@@ -173,14 +173,14 @@ const PhotoGallery = () => {
                     whileTap={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_10-min_qsiv3b.png"
+                        src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_10-min_qsiv3b.png"
                         alt="Event hall"
                         fill
                         className="object-cover rounded shadow-md"
                         placeholder="blur"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 25vw"
-                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_10-min_qsiv3b.png"
+                        blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_10-min_qsiv3b.png"
                     />
                 </motion.div>
             </div>

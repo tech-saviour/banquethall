@@ -17,21 +17,21 @@ const testimonials: TestimonialType[] = [
     title: 'Event Planner, Mumbai',
     quote:
       'The wedding venue and service were both exceptional. The staff managed everything so smoothly we enjoy the event without any stress.',
-    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/v1747411123/testimonial1_dvzxvf.png',
+    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747411123/testimonial1_dvzxvf.png',
   },
   {
     name: 'Ramesh Iyer',
     title: 'Corporate Event Organizer',
     quote:
       'This banquet hall was the perfect choice for our corporate event. The lighting, sound, and overall arrangements were truly top-notch.',
-    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/v1747404322/testimonial2_2_bl6f8m.png',
+    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747404322/testimonial2_2_bl6f8m.png',
   },
   {
     name: 'Sunita Bansal',
     title: 'Sister of the Bride',
     quote:
       'My sister’s sangeet night turned out to be unforgettable. The hospitality was praised by every single guest.',
-    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/v1747411120/testimonial_3_ngfpko.png',
+    image: 'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747411120/testimonial_3_ngfpko.png',
   },
 ];
 

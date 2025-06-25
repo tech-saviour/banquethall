@@ -10,7 +10,7 @@ const slides = [
     type: "single",
     items: [
       {
-        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460078/slide1_omexsq.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460078/slide1_omexsq.png",
         text: "EVENTS & SERVICES",
       },
     ],
@@ -23,7 +23,7 @@ const slides = [
         text: "BIRTHDAY PARTY",
       },
       {
-        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460072/corprate_uaypkk.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460072/corprate_uaypkk.png",
         text: "CORPORATE EVENTS",
       },
     ],
@@ -32,7 +32,7 @@ const slides = [
     type: "double",
     items: [
       {
-        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460079/wedding_gfvf8h.png",
+        src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460079/wedding_gfvf8h.png",
         text: "WEDDING",
       },
       {

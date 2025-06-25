@@ -6,11 +6,11 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const images = [
-  'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460073/image1_tkjjnf.png',
-  'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/image2_zmbtb5.png',
-  'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460068/image3_nmun4m.png',
-  'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460068/image4_p5o1hq.png',
-  'https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460069/image5_v97axc.png',
+  'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460073/image1_tkjjnf.png',
+  'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460070/image2_zmbtb5.png',
+  'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460068/image3_nmun4m.png',
+  'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460068/image4_p5o1hq.png',
+  'https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460069/image5_v97axc.png',
 ];
 
 function useWindowWidth() {

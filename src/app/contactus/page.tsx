@@ -96,7 +96,7 @@ export default function ContactUs() {
       className="relative font-serif w-full h-[80vh] sm:min-h-screen bg-cover bg-top flex items-center justify-center p-4"
       style={{
         backgroundImage:
-          "url('https://res.cloudinary.com/dtswx9pbk/image/upload/v1746612024/contact_vfjxbe.jpg')",
+          "url('https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746612024/contact_vfjxbe.jpg')",
         backgroundPosition: 'top',
         backgroundPositionX: '35%',
       }}

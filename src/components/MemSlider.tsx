@@ -5,12 +5,12 @@ import { motion, useAnimation } from 'framer-motion';
 
 const MemSlider = () => {
   const images = [
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747109615/Rectangle_6_1_-min_zzp487.png", alt: "Wedding decorations on a table" },
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747109611/Rectangle_1-min_rnvmhj.png", alt: "Couple walking together in an archway" },
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747142959/Rectangle_2_wtjobo.png", alt: "Person celebrating with confetti in the air" },
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747109611/Rectangle_3-min_xzketx.png", alt: "Wedding ceremony outdoors with floral arch" },
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747142959/Rectangle_4_zwsa8s.png", alt: "Celebration with sparkles and joy" },
-    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747109615/Rectangle_5_1_-min_kyzz6m.png", alt: "Celebration with sparkles and joy" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747109615/Rectangle_6_1_-min_zzp487.png", alt: "Wedding decorations on a table" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747109611/Rectangle_1-min_rnvmhj.png", alt: "Couple walking together in an archway" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747142959/Rectangle_2_wtjobo.png", alt: "Person celebrating with confetti in the air" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747109611/Rectangle_3-min_xzketx.png", alt: "Wedding ceremony outdoors with floral arch" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747142959/Rectangle_4_zwsa8s.png", alt: "Celebration with sparkles and joy" },
+    { src: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747109615/Rectangle_5_1_-min_kyzz6m.png", alt: "Celebration with sparkles and joy" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

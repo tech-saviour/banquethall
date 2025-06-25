@@ -126,7 +126,7 @@ const ServicesSection = () => {
             <div className="relative mb-20 w-full h-[55vh] sm:h-[65vh] md:h-[70vh]">
                 <div className="absolute inset-0 z-5 h-[55vh] sm:h-[65vh] md:h-[70vh]  bg-black/30" />
                 <Image
-                    src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746638706/services_fz5af3.jpg"
+                    src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746638706/services_fz5af3.jpg"
                     alt="Our services - wedding celebration"
                     fill
                     priority
@@ -155,21 +155,21 @@ const ServicesSection = () => {
                 <ServiceBlock
                     title="Engagement"
                     description="Host an unforgettable engagement celebration in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your special announcement."
-                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746710719/engagement_ycbgsg.jpg"
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746710719/engagement_ycbgsg.jpg"
                     reverse={false}
                 />
 
                 <ServiceBlock
                     title="Wedding"
                     description="Make your big day truly magical with our spacious and luxurious wedding hall. From grand entrances to exquisite catering, we provide everything you need to turn your dream wedding into reality."
-                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746711758/weeding_fcgsoz.png"
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746711758/weeding_fcgsoz.png"
                     reverse={true}
                 />
                 <div className='py-0 md:py-20' ></div>
                 <ServiceBlock
                     title="Birthday"
                     description="Celebrate your special day in style with our vibrant birthday party venue. With customizable themes, delicious catering, and a lively atmosphere, we ensure your birthday bash is unforgettable."
-                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746722266/birthda_uxytp3.png"
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746722266/birthda_uxytp3.png"
                     reverse={false}
                 />
 
@@ -183,14 +183,14 @@ const ServicesSection = () => {
                  <ServiceBlock
                     title="Training Events"
                     description="Elevate your team's skills with our comprehensive training events. We offer customizable programs, expert instructors, and a collaborative environment to ensure your training is effective and engaging."
-                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747237713/Rectangle_467_bz53eg.png"
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747237713/Rectangle_467_bz53eg.png"
                     reverse={false}
                 />
 
                 <ServiceBlock
                     title="Meetings"
                     description="Host an unforgettable meeting in our elegant banquet hall. With stylish interiors, customizable décor, and exceptional service, we create the perfect setting for your important discussions."
-                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747237706/Rectangle_468_balgro.png"
+                    image="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747237706/Rectangle_468_balgro.png"
                     reverse={true}
                 />
                  <div className='py-0 md:py-20' ></div>

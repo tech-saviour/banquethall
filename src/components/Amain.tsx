@@ -6,7 +6,7 @@ export default function Amain() {
         <section className="bg-[#F8F1E9] h-[100vh] w-full text-[#393b39] px-6 py-20 md:px-16"
             style={{
                 backgroundImage:
-                    "url('https://res.cloudinary.com/dtswx9pbk/image/upload/v1747067685/Building-min_mugnrx.png')",
+                    "url('https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747067685/Building-min_mugnrx.png')",
                 backgroundPosition: 'bottom',
                 backgroundSize: 'cover',
                 backgroundPositionY: '0%',

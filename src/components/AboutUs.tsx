@@ -51,14 +51,14 @@ export default function AboutUs() {
                             whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
-                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460075/about-1_jqo7oy.jpg"
+                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460075/about-1_jqo7oy.jpg"
                                 alt="Banquet setup"
                                 fill
                                 className="object-cover rounded shadow-md"
                                 placeholder="blur"
                                 loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460075/about-1_jqo7oy.jpg"
+                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460075/about-1_jqo7oy.jpg"
                             />
                         </motion.div>
                         <motion.div
@@ -70,14 +70,14 @@ export default function AboutUs() {
                             whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
-                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460067/about-2_cfiwoe.jpg"
+                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460067/about-2_cfiwoe.jpg"
                                 alt="Dining table"
                                 fill
                                 className="object-cover rounded shadow-md"
                                 placeholder="blur"
                                 loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 25vw"
-                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460067/about-2_cfiwoe.jpg"
+                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460067/about-2_cfiwoe.jpg"
                             />
                         </motion.div>
                         <motion.div
@@ -89,14 +89,14 @@ export default function AboutUs() {
                             whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
-                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
+                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460070/about-3_kr1sau.jpg"
                                 alt="Wedding setup"
                                 fill
                                 className="object-cover rounded shadow-md"
                                 placeholder="blur"
                                 loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1746460070/about-3_kr1sau.jpg"
+                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746460070/about-3_kr1sau.jpg"
                             />
                         </motion.div>
                         <motion.div
@@ -108,14 +108,14 @@ export default function AboutUs() {
                             whileTap={{ scale: 1.05, transition: { duration: 0.3 } }}
                         >
                             <Image
-                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
+                                src="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_8-min_wxgd4j.png"
                                 alt="Event hall"
                                 fill
                                 className="object-cover rounded shadow-md"
                                 placeholder="blur"
                                 loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 25vw"
-                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/v1747151517/Rectangle_8-min_wxgd4j.png"
+                                blurDataURL="https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747151517/Rectangle_8-min_wxgd4j.png"
                             />
                         </motion.div>
                     </div>

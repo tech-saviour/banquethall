@@ -9,32 +9,32 @@ const testimonials = [
   {
     name: "Sohan Sharma",
     text: "The banquet hall was absolutely stunning and perfect for our wedding. Everything was beautifully organized and stress-free!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465663/testimonial_hhvyml.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746465663/testimonial_hhvyml.png",
   },
   {
     name: "Mehak Verma",
     text: "I was amazed by the decor and hospitality. The staff ensured our event went smoothly. Highly recommend this venue!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465955/testimonial4_hyevol.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746465955/testimonial4_hyevol.png",
   },
   {
     name: "Piyush Kapoor",
     text: "Elegant interiors, top-notch service, and great food. This banquet hall exceeded all our expectations!",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244581/testimonial3_f8wvwz.jpg",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747244581/testimonial3_f8wvwz.jpg",
   },
   {
     name: "Amit Joshi",
     text: "We hosted our daughter’s engagement here and the experience was flawless. The ambiance is luxurious and welcoming.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1747244726/testimonial2_krjdah.jpg",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1747244726/testimonial2_krjdah.jpg",
   },
   {
     name: "Meera Iyer",
     text: "A beautiful venue with excellent lighting and spacious layout. Our guests were truly impressed.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746465830/testimonial1_snnius.png",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746465830/testimonial1_snnius.png",
   },
   {
     name: "Karan Mehta",
     text: "The best banquet hall in New Delhi! Classy décor, helpful staff, and a truly memorable experience.",
-    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/v1746466123/testimonial5_xvld7m.jpg",
+    image: "https://res.cloudinary.com/dtswx9pbk/image/upload/f_auto,q_auto/v1746466123/testimonial5_xvld7m.jpg",
   },
 ];
 

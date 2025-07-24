@@ -11,6 +11,16 @@ interface BookingData {
   date: string;
 }
 
+interface RawBookingData {
+  event?: unknown;
+  name?: unknown;
+  email?: unknown;
+  phone?: unknown;
+  people?: unknown;
+  date?: unknown;
+}
+
+
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
 const rateLimitMap = new Map<string, number>();
 
@@ -18,7 +28,8 @@ const getClientIp = (req: NextRequest): string => {
   return req.headers.get('x-forwarded-for') || 'unknown';
 };
 
-const validateInput = (data: any): BookingData | null => {
+
+const validateInput = (data: RawBookingData): BookingData | null => {
   const { event, name, email, phone, people, date } = data;
   if (
     typeof event !== 'string' ||
@@ -101,8 +112,9 @@ export async function POST(req: NextRequest) {
 
     rateLimitMap.set(ip, now);
     return NextResponse.json({ message: 'Booking submitted successfully' }, { status: 200 });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Email sending error:', error);
-    return NextResponse.json({ message: 'Failed to send booking email', error: error.message }, { status: 500 });
+    const errorMessage = typeof error === 'object' && error !== null && 'message' in error ? (error as { message: string }).message : String(error);
+    return NextResponse.json({ message: 'Failed to send booking email', error: errorMessage }, { status: 500 });
   }
 }

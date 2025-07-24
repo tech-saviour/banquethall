@@ -103,8 +103,11 @@ export async function POST(req: NextRequest) {
 
     rateLimitMap.set(ip, now);
     return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Email error:', error);
-    return NextResponse.json({ message: 'Failed to send email', error: error.message }, { status: 500 });
+    const errorMessage = typeof error === 'object' && error !== null && 'message' in error
+      ? (error as { message: string }).message
+      : String(error);
+    return NextResponse.json({ message: 'Failed to send email', error: errorMessage }, { status: 500 });
   }
 }

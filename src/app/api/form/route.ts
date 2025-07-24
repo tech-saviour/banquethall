@@ -1,45 +1,108 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import nodemailer from 'nodemailer';
 
-let lastRequestTime: number | null = null;
+interface BookingData {
+  event: string;
+  name: string;
+  email: string;
+  phone: string;
+  people: number;
+  date: string;
+}
 
-export async function POST(req: Request) {
-  const { event, name, email, phone, people, date } = await req.json();
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const rateLimitMap = new Map<string, number>();
 
-  const currentTime = Date.now();
-  if (lastRequestTime && currentTime - lastRequestTime < 60000) {
-    return NextResponse.json({ message: 'Please wait 1 minute before sending another request.' }, { status: 429 });
+const getClientIp = (req: NextRequest): string => {
+  return req.headers.get('x-forwarded-for') || 'unknown';
+};
+
+const validateInput = (data: any): BookingData | null => {
+  const { event, name, email, phone, people, date } = data;
+  if (
+    typeof event !== 'string' ||
+    typeof name !== 'string' ||
+    typeof email !== 'string' ||
+    typeof phone !== 'string' ||
+    typeof date !== 'string' ||
+    typeof people !== 'number'
+  ) {
+    return null;
+  }
+  return { event, name, email, phone, people, date };
+};
+
+let transporter: nodemailer.Transporter | null = null;
+
+const getTransporter = () => {
+  if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
+    throw new Error('SMTP_EMAIL and SMTP_PASSWORD must be defined in environment variables');
   }
 
-  lastRequestTime = currentTime;
+  if (!transporter) {
+    transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.SMTP_EMAIL,
+        pass: process.env.SMTP_PASSWORD,
+      },
+    });
+  }
+  return transporter;
+};
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
-    },
-  });
+export async function POST(req: NextRequest) {
+  const ip = getClientIp(req);
+  const now = Date.now();
 
-  const mailOptions = {
-    from: process.env.SMTP_EMAIL,
-    to: process.env.SMTP_EMAIL,
-    subject: 'New Event Booking',
-    html: `
-      <h2>New Event Booking</h2>
-      <p><strong>Event:</strong> ${event}</p>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Number of People:</strong> ${people}</p>
-      <p><strong>Date:</strong> ${date}</p>
-    `,
-  };
+  if (rateLimitMap.has(ip) && now - (rateLimitMap.get(ip) || 0) < RATE_LIMIT_WINDOW_MS) {
+    return NextResponse.json(
+      { message: 'Please wait at least 1 minute before sending another request.' },
+      { status: 429 }
+    );
+  }
+
+  let body;
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ message: 'Invalid JSON payload' }, { status: 400 });
+  }
+
+  const data = validateInput(body);
+  if (!data) {
+    return NextResponse.json({ message: 'Missing or invalid fields in the request' }, { status: 400 });
+  }
+
+  const { event, name, email, phone, people, date } = data;
+
+  const mailHtml = `
+    <h2>New Event Booking</h2>
+    <ul>
+      <li><strong>Event:</strong> ${event}</li>
+      <li><strong>Name:</strong> ${name}</li>
+      <li><strong>Email:</strong> ${email}</li>
+      <li><strong>Phone:</strong> ${phone}</li>
+      <li><strong>Number of People:</strong> ${people}</li>
+      <li><strong>Date:</strong> ${date}</li>
+    </ul>
+  `;
 
   try {
-    await transporter.sendMail(mailOptions);
+    const transporter = getTransporter();
+
+    await transporter.sendMail({
+      from: process.env.SMTP_EMAIL,
+      to: process.env.SMTP_EMAIL,
+      subject: 'New Event Booking',
+      html: mailHtml,
+    });
+
+    rateLimitMap.set(ip, now);
     return NextResponse.json({ message: 'Booking submitted successfully' }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ message: 'Failed to send booking email', error }, { status: 500 });
+  } catch (error: any) {
+    console.error('Email sending error:', error);
+    return NextResponse.json({ message: 'Failed to send booking email', error: error.message }, { status: 500 });
   }
 }

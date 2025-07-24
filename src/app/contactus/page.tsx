@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { toast, ToastContainer } from 'react-toastify';  
-import 'react-toastify/dist/ReactToastify.css';  
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -49,8 +49,8 @@ export default function ContactUs() {
       return;
     }
 
-    setStatus({ type: 'loading', message: 'Sending email...' });
-    const loadingToastId = toast.loading('Sending email...', { autoClose: false });  // Show the loading toast
+    setStatus({ type: 'loading', message: 'Submitting your message...' });
+    const loadingToastId = toast.loading('Submitting your message...', { autoClose: false });
 
     try {
       const response = await fetch('/api/send-email', {
@@ -67,7 +67,7 @@ export default function ContactUs() {
       toast.dismiss(loadingToastId);
 
       if (response.status === 200) {
-        const successMsg = 'Email sent successfully!';
+        const successMsg = 'Your message has been submitted successfully!';
         setStatus({ type: 'success', message: successMsg });
         toast.success(successMsg);
         setName('');
@@ -77,7 +77,7 @@ export default function ContactUs() {
         setStatus({ type: 'error', message: result.message });
         toast.error(result.message);
       } else {
-        const errorMsg = 'Failed to send email. Please try again later.';
+        const errorMsg = 'Unable to submit your message. Please try again later.';
         setStatus({ type: 'error', message: errorMsg });
         toast.error(errorMsg);
       }
@@ -206,9 +206,8 @@ export default function ContactUs() {
 
             {status && (
               <div
-                className={`mt-4 text-center ${
-                  status.type === 'error' ? 'text-red-500' : 'text-white'
-                }`}
+                className={`mt-4 text-center ${status.type === 'error' ? 'text-red-500' : 'text-white'
+                  }`}
               >
               </div>
             )}

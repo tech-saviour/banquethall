@@ -2,6 +2,19 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import nodemailer from 'nodemailer';
 
+interface EmailInput {
+  name: string;
+  email: string;
+  query: string;
+}
+
+interface ValidatedEmailInput {
+  name: string;
+  email: string;
+  query: string;
+}
+
+
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
 const rateLimitMap = new Map<string, number>();
 
@@ -29,7 +42,7 @@ const getTransporter = () => {
   return transporter;
 };
 
-const validateInput = (data: any) => {
+const validateInput = (data: Partial<EmailInput>): ValidatedEmailInput | null => {
   const { name, email, query } = data;
   if (
     typeof name !== 'string' ||
